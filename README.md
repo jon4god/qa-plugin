@@ -1,7 +1,7 @@
 # Q&A
 Simple Plugin for Wordpress to let your users ask questions.
 ## Install Q&A
-![Install Q&A](screenshots/qa-plugin-screenshot-0.png)
+![Install Q&A](https://github.com/jon4god/qa-plugin/raw/master/screenshots/qa-plugin-screenshot-0.png)
 ## Setting Q&A
 ![Setting Q&A](https://github.com/jon4god/qa-plugin/raw/master/screenshots/qa-plugin-screenshot-1.png)
 ## Edit Q&A
