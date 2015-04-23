@@ -1,0 +1,251 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Q&A Plugin\n"
+"POT-Creation-Date: 2015-04-23 10:13+0300\n"
+"PO-Revision-Date: 2015-04-23 10:15+0300\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: ru_RU\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.7.5\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;"
+"_n_noop:1,2;_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+
+#: qa-plugin.php:23 qa-plugin.php:24 qa-plugin.php:37 qa-plugin.php:367
+msgid "Q&A"
+msgstr "Вопрос-Oтвет"
+
+#: qa-plugin.php:25 qa-plugin.php:28
+msgid "New Q&A"
+msgstr "Новый Вопрос-Oтвет"
+
+#: qa-plugin.php:26
+msgid "Add new Q&A"
+msgstr "Добавить новый Вопрос-Oтвет"
+
+#: qa-plugin.php:27
+msgid "Edit Q&A"
+msgstr "Изменить Вопрос-Oтвет"
+
+#: qa-plugin.php:29
+msgid "View Q&A"
+msgstr "Просмотр Вопрос-Oтвет"
+
+#: qa-plugin.php:30
+msgid "Search Q&A"
+msgstr "Поиск Вопрос-Oтвет"
+
+#: qa-plugin.php:31
+msgid "No Q&A found"
+msgstr "Не нашли Вопрос-Oтвет"
+
+#: qa-plugin.php:32
+msgid "No Q&A found in Trash"
+msgstr "В корзине Вопрос-Oтвет не найдены"
+
+#: qa-plugin.php:60 qa-plugin.php:70
+msgid "Ask Tags"
+msgstr "Метки"
+
+#: qa-plugin.php:61
+msgid "Ask Tag"
+msgstr "Метка"
+
+#: qa-plugin.php:62
+msgid "Search Ask Tags"
+msgstr "Найти метку"
+
+#: qa-plugin.php:63
+msgid "All Ask Tags"
+msgstr "Все метки"
+
+#: qa-plugin.php:64
+msgid "Parent Ask Tag"
+msgstr "Родительская метка"
+
+#: qa-plugin.php:65
+msgid "Parent Ask Tag:"
+msgstr "Родительский метка:"
+
+#: qa-plugin.php:66
+msgid "Edit Ask Tag"
+msgstr "Редактировать метку"
+
+#: qa-plugin.php:67
+msgid "Update Ask Tag"
+msgstr "Обновить метку"
+
+#: qa-plugin.php:68
+msgid "Add New Ask Tag"
+msgstr "Добавить метку"
+
+#: qa-plugin.php:69
+msgid "New Ask Tag Name"
+msgstr "Название метки"
+
+#: qa-plugin.php:93
+msgid "your question here"
+msgstr "Ваш вопрос здесь"
+
+#: qa-plugin.php:137 qa-plugin.php:170
+msgid "<b>Success!</b> Q&A is now ready for approval."
+msgstr "<b>Получилось!</b> Вопрос-Oтвет теперь готово к работе."
+
+#: qa-plugin.php:149 qa-plugin.php:183
+msgid "New Q&A Received"
+msgstr "Новая редакция Вопрос-Oтвет"
+
+#: qa-plugin.php:158
+msgid "<b>Error!</b> The Captcha was wrong."
+msgstr "<b>Ошибка!</b> Неправильная капча."
+
+#: qa-plugin.php:191
+msgid "<b>Error!</b> You have to fill out the Captcha."
+msgstr "<b>Ошибка!</b> Введите защитный код."
+
+#: qa-plugin.php:196
+msgid "<b>Error!</b> You have to fill out the Question."
+msgstr "<b>Ошибка!</b> Вы должны написать вопрос."
+
+#: qa-plugin.php:203
+msgid "Question to ask"
+msgstr "Задайте ваш вопрос"
+
+#: qa-plugin.php:227
+msgid "Submit"
+msgstr "Отправить"
+
+#: qa-plugin.php:251
+msgid "Name"
+msgstr "Ваше имя"
+
+#: qa-plugin.php:255 qa-plugin.php:370
+msgid "Email"
+msgstr "Эл. почта"
+
+#: qa-plugin.php:257
+msgid ""
+"If you provide an Email you will receive a message, once your Question is "
+"Answered."
+msgstr ""
+"Если введёте электронную почту, то получите письмо, как только будет дан "
+"ответ."
+
+#: qa-plugin.php:320
+msgid "Anonymous"
+msgstr "Аноним"
+
+#: qa-plugin.php:366
+msgid "Date"
+msgstr "Дате"
+
+#: qa-plugin.php:368
+msgid "Answer"
+msgstr "Ответ"
+
+#: qa-plugin.php:369
+msgid "Username"
+msgstr "Имя"
+
+#: qa-plugin.php:412
+msgid "Name and Email"
+msgstr "Имя и Email"
+
+#: qa-plugin.php:420
+msgid "Username: "
+msgstr "Имя: "
+
+#: qa-plugin.php:421
+msgid "E-mail: "
+msgstr "Эл.почта: "
+
+#: qa-plugin.php:455
+msgid "First"
+msgstr "Первый"
+
+#: qa-plugin.php:461
+msgid "Last"
+msgstr "Последний"
+
+#: qa-plugin.php:468
+msgid "Q&A - Overview"
+msgstr "Вопрос-Oтвет - Oбзор"
+
+#: qa-plugin.php:482
+msgid "published"
+msgstr "опубликован(-о)"
+
+#: qa-plugin.php:493
+msgid "open"
+msgstr "открыт(-ы)"
+
+#: qa-plugin.php:507
+msgid "Q&A Settings"
+msgstr "Параметры Вопрос-Oтвет"
+
+#: qa-plugin.php:514
+msgid "E-Mail Alert on new Q&A"
+msgstr "Оповещения по электронной почте о новых Вопрос-Oтвет"
+
+#: qa-plugin.php:524
+msgid "Show Captcha"
+msgstr "Настройки капчи"
+
+#: qa-plugin.php:534
+msgid "Captcha Public Key"
+msgstr "Captcha Public Key"
+
+#: qa-plugin.php:544
+msgid "Captcha Private Key"
+msgstr "Captcha Private Key"
+
+#: qa-plugin.php:554
+msgid "Number of Q&A"
+msgstr "Количество Вопрос-Oтвет"
+
+#: qa-plugin.php:564
+msgid "User Fields"
+msgstr "Пользовательские поля"
+
+#: qa-plugin.php:576
+msgid "Configure your Q&A"
+msgstr "Настройте ваш Вопрос-Oтвет"
+
+#: qa-plugin.php:588
+msgid ""
+"Would you like to display User Fields, like E-Mail and Username? This would "
+"give your users the possibility to receive a Notification if an Answer is "
+"answered."
+msgstr ""
+"Вы хотите показывать пользователем поля электронной почты и имя? Это даст "
+"вашим пользователям возможность получать уведомление, если получен ответ на "
+"вопрос."
+
+#: qa-plugin.php:593 qa-plugin.php:598
+msgid ""
+"Get a key from <a href=\"https://www.google.com/recaptcha/admin/create\" "
+"target=\"_blank\">https://www.google.com/recaptcha/admin/create</a>"
+msgstr ""
+"Получить ключ из <a href=\"https://www.google.com/recaptcha/admin/create\" "
+"target=\"_blank\">https://www.google.com/recaptcha/admin/create</a>"
+
+#: qa-plugin.php:603
+msgid "How much Q&A you want to display on one page."
+msgstr "Сколько Вопрос-Oтвет вы хотите отображать на одной странице."
+
+#: qa-plugin.php:637
+msgid " - Q&A - Answer Received"
+msgstr " - Вопрос-Oтвет - получен ответ"
+
+#: qa-plugin.php:637
+msgid "Your Q&A has been Answered!"
+msgstr "На ваш вопрос был дан ответ!"
