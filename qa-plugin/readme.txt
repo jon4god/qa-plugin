@@ -15,7 +15,7 @@ Simple Plugin to let your users ask questions.
 This Plugin allows you to include a simple Textbox through which your site visitors can ask you short questions.<br>
 You can answer them through the backend.<br>
 <br>
-See it in action at: (http://kilo-moana.com/ask-me-wordpress-plugin/)
+See it in action at: (http://kecu.ru/vopros-otvet/)
 
 == Installation ==
 
@@ -31,7 +31,7 @@ Place the [qa] shortcode in one of your posts.
 Place the [qa] shortcode in one of your posts.
 
 == Screenshots ==
-1. Ask Me in Action
+1. Q&A in Action
 2. Waiting question
 3. Answer the question
 4. Published answer
