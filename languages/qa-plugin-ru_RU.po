@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Q&A Plugin\n"
 "POT-Creation-Date: 2015-04-23 10:13+0300\n"
-"PO-Revision-Date: 2015-04-23 10:15+0300\n"
+"PO-Revision-Date: 2015-04-25 11:19+0300\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ru_RU\n"
@@ -22,35 +22,35 @@ msgstr ""
 
 #: qa-plugin.php:23 qa-plugin.php:24 qa-plugin.php:37 qa-plugin.php:367
 msgid "Q&A"
-msgstr "Вопрос-Oтвет"
+msgstr "В&О"
 
 #: qa-plugin.php:25 qa-plugin.php:28
 msgid "New Q&A"
-msgstr "Новый Вопрос-Oтвет"
+msgstr "Новый В&О"
 
 #: qa-plugin.php:26
 msgid "Add new Q&A"
-msgstr "Добавить новый Вопрос-Oтвет"
+msgstr "Добавить новый В&О"
 
 #: qa-plugin.php:27
 msgid "Edit Q&A"
-msgstr "Изменить Вопрос-Oтвет"
+msgstr "Изменить В&О"
 
 #: qa-plugin.php:29
 msgid "View Q&A"
-msgstr "Просмотр Вопрос-Oтвет"
+msgstr "Просмотр В&О"
 
 #: qa-plugin.php:30
 msgid "Search Q&A"
-msgstr "Поиск Вопрос-Oтвет"
+msgstr "Поиск В&О"
 
 #: qa-plugin.php:31
 msgid "No Q&A found"
-msgstr "Не нашли Вопрос-Oтвет"
+msgstr "Не нашли В&О"
 
 #: qa-plugin.php:32
 msgid "No Q&A found in Trash"
-msgstr "В корзине Вопрос-Oтвет не найдены"
+msgstr "В корзине В&О не найдены"
 
 #: qa-plugin.php:60 qa-plugin.php:70
 msgid "Ask Tags"
@@ -98,11 +98,11 @@ msgstr "Ваш вопрос здесь"
 
 #: qa-plugin.php:137 qa-plugin.php:170
 msgid "<b>Success!</b> Q&A is now ready for approval."
-msgstr "<b>Получилось!</b> Вопрос-Oтвет теперь готово к работе."
+msgstr "<b>Получилось!</b> В&О снова готов к работе."
 
 #: qa-plugin.php:149 qa-plugin.php:183
 msgid "New Q&A Received"
-msgstr "Новая редакция Вопрос-Oтвет"
+msgstr "Новая редакция В&О"
 
 #: qa-plugin.php:158
 msgid "<b>Error!</b> The Captcha was wrong."
@@ -178,7 +178,7 @@ msgstr "Последний"
 
 #: qa-plugin.php:468
 msgid "Q&A - Overview"
-msgstr "Вопрос-Oтвет - Oбзор"
+msgstr "В&О - Oбзор"
 
 #: qa-plugin.php:482
 msgid "published"
@@ -190,11 +190,11 @@ msgstr "открыт(-ы)"
 
 #: qa-plugin.php:507
 msgid "Q&A Settings"
-msgstr "Параметры Вопрос-Oтвет"
+msgstr "Настройки В&О"
 
 #: qa-plugin.php:514
 msgid "E-Mail Alert on new Q&A"
-msgstr "Оповещения по электронной почте о новых Вопрос-Oтвет"
+msgstr "Оповещения по электронной почте о новых В&О"
 
 #: qa-plugin.php:524
 msgid "Show Captcha"
@@ -210,7 +210,7 @@ msgstr "Captcha Private Key"
 
 #: qa-plugin.php:554
 msgid "Number of Q&A"
-msgstr "Количество Вопрос-Oтвет"
+msgstr "Количество В&О"
 
 #: qa-plugin.php:564
 msgid "User Fields"
@@ -218,7 +218,7 @@ msgstr "Пользовательские поля"
 
 #: qa-plugin.php:576
 msgid "Configure your Q&A"
-msgstr "Настройте ваш Вопрос-Oтвет"
+msgstr "Настройте ваш В&О"
 
 #: qa-plugin.php:588
 msgid ""
@@ -240,11 +240,11 @@ msgstr ""
 
 #: qa-plugin.php:603
 msgid "How much Q&A you want to display on one page."
-msgstr "Сколько Вопрос-Oтвет вы хотите отображать на одной странице."
+msgstr "Сколько В&О вы хотите отображать на одной странице."
 
 #: qa-plugin.php:637
 msgid " - Q&A - Answer Received"
-msgstr " - Вопрос-Oтвет - получен ответ"
+msgstr " - В&О - получен ответ"
 
 #: qa-plugin.php:637
 msgid "Your Q&A has been Answered!"
