@@ -1,7 +1,7 @@
 <?php
 /**
  * Plugin Name: Q&A Plugin
- * Plugin URI: http://starcoms.ru/qa-wordpress-plugin/
+ * Plugin URI: http://wp.starcoms.ru/qa-plugin/
  * Description: Simple Plugin to let your users ask questions.
  * Version: 1.0
  * Author: Evgeniy Kutsenko
