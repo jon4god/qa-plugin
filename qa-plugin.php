@@ -206,7 +206,7 @@ function show_qa(  ) {
             <?php
             if(get_option('qa_setting_user_response') == true)
             {
-                echo display_userdatafields();
+                echo qa_display_userdatafields();
             }
             if($isCaptcha)
             {
@@ -242,7 +242,7 @@ function show_qa(  ) {
 
 add_shortcode('qa', 'show_qa');
 
-function display_userdatafields()
+function qa_display_userdatafields()
 {
     ob_start(); ?>
 
@@ -604,9 +604,9 @@ function qa_number_callback() {
         <p class="description">' . __('How much Q&A you want to display on one page.', 'qa-plugin') . "</p>";
 }
 
-add_action( 'admin_menu', 'add_user_menu_bubble' );
+add_action( 'admin_menu', 'qa_add_user_menu_bubble' );
 
-function add_user_menu_bubble() {
+function qa_add_user_menu_bubble() {
 
     global $menu;
 
@@ -631,12 +631,12 @@ function add_user_menu_bubble() {
 
 }
 
-function publish_qa_hook($id)
+function qa_publish_qa_hook($id)
 {
     $customs = get_post_custom($id);
     if(isset($customs['qa_email']))
         wp_mail( $customs['qa_email'],  get_bloginfo('name').__(' - Q&A - Answer Received', 'qa-plugin'), __('Your Q&A has been Answered!', 'qa-plugin'));
 }
 
-add_action( 'publish_qa', 'publish_qa_hook' );
+add_action( 'publish_qa', 'qa_publish_qa_hook' );
 ?>
