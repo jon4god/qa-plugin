@@ -3,7 +3,7 @@
 	font-size:13px;
 }
 
-.question, input.question {
+.question,input.question {
 	width:100%;
 }
 
@@ -38,10 +38,27 @@
 	margin-right:10px;
 }
 
+ul.qa_tags li {
+	display:inline-block;
+}
+
+.label {
+	display:inline;
+	padding:.2em .6em .3em;
+	font-size:75%;
+	font-weight:700;
+	line-height:1;
+	color:#fff;
+	text-align:center;
+	white-space:nowrap;
+	vertical-align:baseline;
+	border-radius:.25em;
+	background-color:#777;
+}
+
 .qa_pagination {
-	margin:18px 0 !important;
+	margin:18px 0!important;
 	padding:0;
-	display: inline-block;
 }
 
 .qa_pagination ul {
@@ -163,29 +180,11 @@ ul.akkordeon li {
 ul.akkordeon li > p {
 	margin:0;
 	padding:10px;
-	background:#0C0C0C -webkit-gradient(linear,left top,left bottom,from(#868585),to(#666)) no-repeat;
-	background:#0C0C0C -moz-linear-gradient(top,#868585,#666);
-	background:#0C0C0C -ms-linear-gradient(top,#868585,#666);
-	background:#0C0C0C -o-linear-gradient(top,#868585,#666);
 	color:#fff;
 	text-shadow:0 1px 1px #494949;
 	font-size:14px;
 	font-family:sans-serif;
 	cursor:pointer;
-}
-
-ul.akkordeon li > p:hover {
-	background:#0C0C0C -webkit-gradient(linear,left top,left bottom,from(#868585),to(#4E4B4B)) no-repeat;
-	background:#0C0C0C -moz-linear-gradient(top,#868585,#666);
-	background:#0C0C0C -ms-linear-gradient(top,#868585,#666);
-	background:#0C0C0C -o-linear-gradient(top,#868585,#666);
-}
-
-ul.akkordeon li > p.active {
-	background:#369 -webkit-gradient(linear,left top,left bottom,from(#86B8E9),to(#5682AE)) no-repeat;
-	background:#369 -moz-linear-gradient(top,#86B8E9,#5682AE);
-	background:-ms-linear-gradient(top,#86B8E9,#5682AE);
-	background:-o-linear-gradient(top,#86B8E9,#5682AE);
 }
 
 ul.akkordeon li > div {

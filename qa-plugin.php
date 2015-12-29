@@ -14,6 +14,7 @@
 function qa_init() {
     $plugin_dir = basename(dirname(__FILE__));
     load_plugin_textdomain( 'qa-plugin', false, $plugin_dir . '/languages/' );
+    define('qa-plugin-dir', plugin_dir_path(__FILE__));
 }
 add_action('plugins_loaded', 'qa_init');
 
@@ -198,6 +199,18 @@ function show_qa(  ) {
     ?>
 
     <div class="qa">
+
+      <script type="text/javascript" src="<?php echo plugin_dir_url(__FILE__) ?>js/qa.js"></script>
+      <?php $terms = get_terms("asktag");
+            if( count($terms) > 0 ){
+            echo "<ul class='qa_tags '>";
+            echo '<li><a href="#"><span class="label">' . __('All', 'qa-plugin') . '</span></a></li>';
+            foreach ($terms as $term) {
+              echo '<li><a href="#"><span class="label">'. $term->name .'</span></a></li>'; 
+              }
+            echo "</ul>";
+            } ?>
+
         <form id="newqa" name="newqa" method="post" action="">
 
             <label for="question" id="questionLabel"><?php _e('Question to ask', 'qa-plugin'); ?></label><br />
@@ -206,7 +219,7 @@ function show_qa(  ) {
             <?php
             if(get_option('qa_setting_user_response') == true)
             {
-                echo qa_display_userdatafields();
+                echo display_userdatafields();
             }
             if($isCaptcha)
             {
@@ -215,13 +228,7 @@ function show_qa(  ) {
             <script type="text/javascript"
                     src="https://www.google.com/recaptcha/api.js?hl=<?php echo $lang; ?>">
             </script>
-            <script>
-                jQuery( ".question" ).click(function() {
-                    if ( jQuery( ".g-recaptcha" ).is( ":hidden" ) ) {
-                        jQuery( ".g-recaptcha" ).slideDown( "slow" );
-                    } 
-                });
-            </script>
+
             <?php } ?>
             
             <div><input class="btn btn-primary submit" type="submit" value="<?php _e('Submit', 'qa-plugin'); ?>" tabindex="6" name="submit" /></div>
@@ -229,7 +236,6 @@ function show_qa(  ) {
             <input type="hidden" name="post_type" id="post_type" value="qa" />
             <input type="hidden" name="action" value="post" />
             <?php wp_nonce_field( 'new-post' ); ?>
-
 
         </form>
         </div>
@@ -242,7 +248,7 @@ function show_qa(  ) {
 
 add_shortcode('qa', 'show_qa');
 
-function qa_display_userdatafields()
+function display_userdatafields()
 {
     ob_start(); ?>
 
@@ -257,13 +263,7 @@ function qa_display_userdatafields()
             <div class="emailmsg"><?php _e('If you provide an Email you will receive a message, once your Question is Answered.', 'qa-plugin'); ?></div>
         </div>
     </div>
-    <script>
-		jQuery( ".question" ).click(function() {
-			if ( jQuery( ".userdatafields" ).is( ":hidden" ) ) {
-				jQuery( ".userdatafields" ).slideDown( "slow" );
-			} 
-		});
-	</script>
+
 
     <?php $output = ob_get_contents();
     ob_end_clean();
@@ -292,24 +292,27 @@ function qa_output_normal()
 
         query_posts($args); ?>
 
-	 <script type="text/javascript">
-		jQuery(document).ready(function ($) {
-  		$('ul.akkordeon li > p:first').addClass('active').next('div').slideDown(200);
-			$('ul.akkordeon li > p').click(function(){
-				if(!$(this).hasClass('active')){
-					$('ul.akkordeon li > p').removeClass('active').next('div').slideUp();
-					$(this).addClass('active');
-					$(this).next('div').slideDown(200);
-				} else {
-					$(this).removeClass('active').next('div').slideUp();
-				}
-			});
-		});
-	</script>
 	      <div>
         <ul class='akkordeon'>
-        <?php while ( have_posts() ) : the_post(); ?>
-          <li>
+        <?php while ( have_posts() ) : the_post();
+          $allterms = get_the_terms(get_the_ID(), "asktag");
+
+                        if(!empty($allterms))
+                        {
+                            $i = 0;
+                            foreach($allterms as $term)
+                            {
+                                $qa_tags = $term->name;
+                                $i++;
+                                if($i != count($allterms))
+                                {
+                                    echo " ";
+                                }
+                            }
+                        }
+
+                        ?>
+          <li class="<?php echo $qa_tags; ?>" style="border-bottom:1px solid #fff;">
 
                 <p>
                     <?php
@@ -349,7 +352,14 @@ function qa_output_normal()
                 </p>
                 
                 <div>
-                    <?php the_content(); ?>
+                    <?php 
+                      $content = get_the_content();
+                      if (!$content) {
+                        echo get_option( 'qa_setting_default_answer');
+                      } else {
+                        echo $content;
+                      };
+                    ?>
                 </div>
 
           </li>
@@ -561,6 +571,26 @@ function qa_settings_init() {
     register_setting( 'reading', 'qa_setting_number_qa' );
 
     add_settings_field(
+        'qa_setting_background_open',
+        __('Color background open Q&A', 'qa-plugin'),
+        'qa_number_background_open',
+        'reading',
+        'qa_setting_section'
+    );
+
+    register_setting( 'reading', 'qa_setting_background_open' );
+
+    add_settings_field(
+        'qa_setting_background_close',
+        __('Color background close Q&A', 'qa-plugin'),
+        'qa_number_background_close',
+        'reading',
+        'qa_setting_section'
+    );
+
+    register_setting( 'reading', 'qa_setting_background_close' );
+
+    add_settings_field(
         'qa_setting_user_response',
         __('User Fields', 'qa-plugin'),
         'qa_setting_user_response_callback',
@@ -569,6 +599,16 @@ function qa_settings_init() {
     );
 
     register_setting( 'reading', 'qa_setting_user_response' );
+    
+    add_settings_field(
+        'qa_setting_default_answer',
+        __('Default answer', 'qa-plugin'),
+        'qa_setting_default_answer',
+        'reading',
+        'qa_setting_section'
+    );
+
+    register_setting( 'reading', 'qa_setting_default_answer' );
  }
 
  add_action( 'admin_init', 'qa_settings_init' );
@@ -604,9 +644,24 @@ function qa_number_callback() {
         <p class="description">' . __('How much Q&A you want to display on one page.', 'qa-plugin') . "</p>";
 }
 
-add_action( 'admin_menu', 'qa_add_user_menu_bubble' );
+function qa_number_background_open() {
+    echo '<input name="qa_setting_background_open" id="gv_thumbnails_insert_into_excerpt" type="text" class="code" value="' . get_option( 'qa_setting_background_open') . '" />
+        <p class="description">' . __('Set color background open tab Q&A.', 'qa-plugin') . "</p>";
+}
 
-function qa_add_user_menu_bubble() {
+function qa_number_background_close() {
+    echo '<input name="qa_setting_background_close" id="gv_thumbnails_insert_into_excerpt" type="text" class="code" value="' . get_option( 'qa_setting_background_close') . '" />
+        <p class="description">' . __('Set color background close tab Q&A.', 'qa-plugin') . "</p>";
+}
+
+function qa_setting_default_answer() {
+    echo '<input name="qa_setting_default_answer" id="gv_thumbnails_insert_into_excerpt" size="80" type="text" class="code" value="' . get_option( 'qa_setting_default_answer') . '" />
+        <p class="description">' . __('Enter the default answer.', 'qa-plugin') . "</p>";
+}
+	
+add_action( 'admin_menu', 'add_user_menu_bubble' );
+
+function add_user_menu_bubble() {
 
     global $menu;
 
@@ -631,12 +686,27 @@ function qa_add_user_menu_bubble() {
 
 }
 
-function qa_publish_qa_hook($id)
+function publish_qa_hook($id)
 {
     $customs = get_post_custom($id);
     if(isset($customs['qa_email']))
         wp_mail( $customs['qa_email'],  get_bloginfo('name').__(' - Q&A - Answer Received', 'qa-plugin'), __('Your Q&A has been Answered!', 'qa-plugin'));
 }
 
-add_action( 'publish_qa', 'qa_publish_qa_hook' );
+add_action( 'publish_qa', 'publish_qa_hook' );
+
+add_action( 'wp_head', 'qa_css_hook' );
+function qa_css_hook( ) {
+  $background_open = get_option( 'qa_setting_background_open');
+  $background_close = get_option( 'qa_setting_background_close');
+  if (!$background_open) $background_open = "#333";
+  if (!$background_close) $background_close = "#369";
+?>
+  <style type='text/css'>
+  ul.akkordeon li > p {background: <?php echo $background_open; ?>;}
+  ul.akkordeon li > p:hover {background: <?php echo $background_open; ?>;}
+  ul.akkordeon li > p.active {background: <?php echo $background_close; ?>;}
+  </style>
+<?php
+}
 ?>
