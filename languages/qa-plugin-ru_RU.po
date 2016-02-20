@@ -1,15 +1,15 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Q&A Plugin\n"
-"POT-Creation-Date: 2015-04-23 10:13+0300\n"
-"PO-Revision-Date: 2015-11-14 15:38+0300\n"
+"POT-Creation-Date: 2016-02-20 11:54+0300\n"
+"PO-Revision-Date: 2016-02-20 11:55+0300\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ru_RU\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.8.6\n"
+"X-Generator: Poedit 1.8.7\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
@@ -20,119 +20,135 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.js\n"
 
-#: qa-plugin.php:23 qa-plugin.php:24 qa-plugin.php:37 qa-plugin.php:367
+#: qa-plugin.php:29
+msgid ""
+"Please, set <strong><a href=\"options-general.php?page=qa-plugin.php"
+"\">setting</a></strong> for this plugin."
+msgstr ""
+"Пожалуйста, задайте <strong><a href=«options-general.php?page=wp_ya_addurl-"
+"plugin.php»>настройки</a></strong> для этого плагина."
+
+#: qa-plugin.php:39
+msgid "Settings"
+msgstr "Настройки"
+
+#: qa-plugin.php:47 qa-plugin.php:48 qa-plugin.php:60 qa-plugin.php:372
 msgid "Q&A"
 msgstr "В&О"
 
-#: qa-plugin.php:25 qa-plugin.php:28
+#: qa-plugin.php:49 qa-plugin.php:52
 msgid "New Q&A"
 msgstr "Новый В&О"
 
-#: qa-plugin.php:26
+#: qa-plugin.php:50
 msgid "Add new Q&A"
 msgstr "Добавить новый В&О"
 
-#: qa-plugin.php:27
+#: qa-plugin.php:51
 msgid "Edit Q&A"
 msgstr "Изменить В&О"
 
-#: qa-plugin.php:29
+#: qa-plugin.php:53
 msgid "View Q&A"
 msgstr "Просмотр В&О"
 
-#: qa-plugin.php:30
+#: qa-plugin.php:54
 msgid "Search Q&A"
 msgstr "Поиск В&О"
 
-#: qa-plugin.php:31
+#: qa-plugin.php:55
 msgid "No Q&A found"
 msgstr "Не нашли В&О"
 
-#: qa-plugin.php:32
+#: qa-plugin.php:56
 msgid "No Q&A found in Trash"
 msgstr "В корзине В&О не найдены"
 
-#: qa-plugin.php:60 qa-plugin.php:70
-msgid "Ask Tags"
-msgstr "Метки"
+#: qa-plugin.php:80 qa-plugin.php:90
+msgid "Q&A Tags"
+msgstr "Метки В&О"
 
-#: qa-plugin.php:61
-msgid "Ask Tag"
-msgstr "Метка"
+#: qa-plugin.php:81
+msgid "Q&A Tag"
+msgstr "Метка В&О"
 
-#: qa-plugin.php:62
-msgid "Search Ask Tags"
-msgstr "Найти метку"
+#: qa-plugin.php:82
+msgid "Search Q&A Tags"
+msgstr "Поиск В&О Метки"
 
-#: qa-plugin.php:63
-msgid "All Ask Tags"
-msgstr "Все метки"
+#: qa-plugin.php:83
+msgid "All Q&A Tags"
+msgstr "Все метки В&О"
 
-#: qa-plugin.php:64
-msgid "Parent Ask Tag"
-msgstr "Родительская метка"
+#: qa-plugin.php:84
+msgid "Parent Q&A Tag"
+msgstr "Родительская метка В&О"
 
-#: qa-plugin.php:65
-msgid "Parent Ask Tag:"
-msgstr "Родительский метка:"
+#: qa-plugin.php:85
+msgid "Parent Q&A Tag:"
+msgstr "Родительская метка В&О:"
 
-#: qa-plugin.php:66
-msgid "Edit Ask Tag"
-msgstr "Редактировать метку"
+#: qa-plugin.php:86
+msgid "Edit Q&A Tag"
+msgstr "Изменить В&О метку"
 
-#: qa-plugin.php:67
-msgid "Update Ask Tag"
-msgstr "Обновить метку"
+#: qa-plugin.php:87
+msgid "Update Q&A Tag"
+msgstr "Обновление В&О метки"
 
-#: qa-plugin.php:68
-msgid "Add New Ask Tag"
-msgstr "Добавить метку"
+#: qa-plugin.php:88
+msgid "Add New Q&A Tag"
+msgstr "Добавить новую метку В&О"
 
-#: qa-plugin.php:69
-msgid "New Ask Tag Name"
-msgstr "Название метки"
+#: qa-plugin.php:89
+msgid "New Q&A Tag Name"
+msgstr "Название новой метки В&О"
 
-#: qa-plugin.php:93
+#: qa-plugin.php:109
 msgid "your question here"
 msgstr "Ваш вопрос здесь"
 
-#: qa-plugin.php:137 qa-plugin.php:170
+#: qa-plugin.php:151 qa-plugin.php:186
 msgid "<b>Success!</b> Q&A is now ready for approval."
 msgstr "<b>Получилось!</b> В&О снова готов к работе."
 
-#: qa-plugin.php:149 qa-plugin.php:183
+#: qa-plugin.php:166 qa-plugin.php:201
 msgid "New Q&A Received"
-msgstr "Обновление в В&О"
+msgstr "Новая редакция В&О"
 
-#: qa-plugin.php:158
+#: qa-plugin.php:174
 msgid "<b>Error!</b> The Captcha was wrong."
 msgstr "<b>Ошибка!</b> Неправильная капча."
 
-#: qa-plugin.php:191
+#: qa-plugin.php:209
 msgid "<b>Error!</b> You have to fill out the Captcha."
 msgstr "<b>Ошибка!</b> Введите защитный код."
 
-#: qa-plugin.php:196
+#: qa-plugin.php:214
 msgid "<b>Error!</b> You have to fill out the Question."
 msgstr "<b>Ошибка!</b> Вы должны написать вопрос."
 
-#: qa-plugin.php:203
+#: qa-plugin.php:223
+msgid "All"
+msgstr "Все"
+
+#: qa-plugin.php:231
 msgid "Question to ask"
 msgstr "Задайте ваш вопрос"
 
-#: qa-plugin.php:227
+#: qa-plugin.php:247
 msgid "Submit"
 msgstr "Отправить"
 
-#: qa-plugin.php:251
+#: qa-plugin.php:265
 msgid "Name"
 msgstr "Ваше имя"
 
-#: qa-plugin.php:255 qa-plugin.php:370
+#: qa-plugin.php:269 qa-plugin.php:376
 msgid "Email"
 msgstr "Эл. почта"
 
-#: qa-plugin.php:257
+#: qa-plugin.php:271
 msgid ""
 "If you provide an Email you will receive a message, once your Question is "
 "Answered."
@@ -140,87 +156,129 @@ msgstr ""
 "Если введёте электронную почту, то получите письмо, как только будет дан "
 "ответ."
 
-#: qa-plugin.php:320
+#: qa-plugin.php:323
 msgid "Anonymous"
 msgstr "Аноним"
 
-#: qa-plugin.php:366
+#: qa-plugin.php:371
 msgid "Date"
 msgstr "Дате"
 
-#: qa-plugin.php:368
+#: qa-plugin.php:373
 msgid "Answer"
 msgstr "Ответ"
 
-#: qa-plugin.php:369
+#: qa-plugin.php:374
 msgid "Username"
 msgstr "Имя"
 
-#: qa-plugin.php:412
+#: qa-plugin.php:375
+msgid "ip"
+msgstr "IP  Адрес"
+
+#: qa-plugin.php:419
 msgid "Name and Email"
 msgstr "Имя и Email"
 
-#: qa-plugin.php:420
+#: qa-plugin.php:428
 msgid "Username: "
 msgstr "Имя: "
 
-#: qa-plugin.php:421
+#: qa-plugin.php:429
+msgid "IP: "
+msgstr "IP: "
+
+#: qa-plugin.php:430
 msgid "E-mail: "
 msgstr "Эл.почта: "
 
-#: qa-plugin.php:455
+#: qa-plugin.php:466
 msgid "First"
 msgstr "Первый"
 
-#: qa-plugin.php:461
+#: qa-plugin.php:472
 msgid "Last"
 msgstr "Последний"
 
-#: qa-plugin.php:468
+#: qa-plugin.php:479
 msgid "Q&A - Overview"
 msgstr "В&О - Oбзор"
 
-#: qa-plugin.php:482
+#: qa-plugin.php:491
 msgid "published"
 msgstr "опубликован(-о)"
 
-#: qa-plugin.php:493
+#: qa-plugin.php:501
 msgid "open"
 msgstr "открыт(-ы)"
 
-#: qa-plugin.php:507
-msgid "Q&A Settings"
-msgstr "Настройки В&О"
-
-#: qa-plugin.php:514
+#: qa-plugin.php:514 qa-plugin.php:620
 msgid "E-Mail Alert on new Q&A"
 msgstr "Оповещения по электронной почте о новых В&О"
 
-#: qa-plugin.php:524
-msgid "Show Captcha"
-msgstr "Настройки капчи"
+#: qa-plugin.php:523 qa-plugin.php:626
+msgid "Default e-mail"
+msgstr "Адрес электронной почты по-умолчанию"
 
-#: qa-plugin.php:534
-msgid "Captcha Public Key"
-msgstr "Captcha Public Key"
+#: qa-plugin.php:532 qa-plugin.php:633
+msgid "Default answer"
+msgstr "Ответ по-умолчанию"
 
-#: qa-plugin.php:544
-msgid "Captcha Private Key"
-msgstr "Captcha Private Key"
-
-#: qa-plugin.php:554
-msgid "Number of Q&A"
-msgstr "Количество В&О"
-
-#: qa-plugin.php:564
+#: qa-plugin.php:541 qa-plugin.php:640
 msgid "User Fields"
 msgstr "Пользовательские поля"
 
-#: qa-plugin.php:576
+#: qa-plugin.php:550 qa-plugin.php:646
+msgid "Show Captcha"
+msgstr "Настройки капчи"
+
+#: qa-plugin.php:559 qa-plugin.php:659
+msgid "Captcha Public Key"
+msgstr "Captcha Public Key"
+
+#: qa-plugin.php:568 qa-plugin.php:652
+msgid "Captcha Private Key"
+msgstr "Captcha Private Key"
+
+#: qa-plugin.php:577 qa-plugin.php:666
+msgid "Number of Q&A"
+msgstr "Количество В&О"
+
+#: qa-plugin.php:586 qa-plugin.php:673
+msgid "Color background open Q&A"
+msgstr "Цвет фона открытой вкладки В&О"
+
+#: qa-plugin.php:595 qa-plugin.php:680
+msgid "Color background close Q&A"
+msgstr "Цвет фона закрытой вкладки В&О"
+
+#: qa-plugin.php:605
+msgid "Q&A Settings"
+msgstr "Настройки В&О"
+
+#: qa-plugin.php:613
+msgid "Setting for Q&A plugin"
+msgstr "Настройки для В&О плагина"
+
+#: qa-plugin.php:614
 msgid "Configure your Q&A"
 msgstr "Настройте ваш В&О"
 
-#: qa-plugin.php:588
+#: qa-plugin.php:629
+msgid ""
+"Enter the default e-mail. If not entered, it is sent to the administrator."
+msgstr ""
+"Введите адрес электронной почты по умолчанию. Если не введен, то "
+"отправляется администратору."
+
+#: qa-plugin.php:636
+msgid ""
+"Enter the default answer. It shows if the question is published unanswered."
+msgstr ""
+"Введите ответ по умолчанию. Это показывает, если вопрос публикуется без "
+"ответа."
+
+#: qa-plugin.php:642
 msgid ""
 "Would you like to display User Fields, like E-Mail and Username? This would "
 "give your users the possibility to receive a Notification if an Answer is "
@@ -230,7 +288,7 @@ msgstr ""
 "вашим пользователям возможность получать уведомление, если получен ответ на "
 "вопрос."
 
-#: qa-plugin.php:593 qa-plugin.php:598
+#: qa-plugin.php:655 qa-plugin.php:662
 msgid ""
 "Get a key from <a href=\"https://www.google.com/recaptcha/admin/create\" "
 "target=\"_blank\">https://www.google.com/recaptcha/admin/create</a>"
@@ -238,14 +296,65 @@ msgstr ""
 "Получить ключ из <a href=\"https://www.google.com/recaptcha/admin/create\" "
 "target=\"_blank\">https://www.google.com/recaptcha/admin/create</a>"
 
-#: qa-plugin.php:603
-msgid "How much Q&A you want to display on one page."
-msgstr "Сколько В&О вы хотите отображать на одной странице."
+#: qa-plugin.php:669
+msgid "How much questions you want to display on one page."
+msgstr "Сколько вопросов вы хотите отобразить на одной странице."
 
-#: qa-plugin.php:637
+#: qa-plugin.php:676
+msgid "Set color background open tab Q&A."
+msgstr "Цвет фона открытой вкладки В&О"
+
+#: qa-plugin.php:683
+msgid "Set color background close tab Q&A."
+msgstr "Цвет фона закрытой вкладки В&О"
+
+#: qa-plugin.php:690
+msgid "Save setting"
+msgstr "Сохранить настройки"
+
+#: qa-plugin.php:727
 msgid " - Q&A - Answer Received"
 msgstr " - В&О - получен ответ"
 
-#: qa-plugin.php:637
+#: qa-plugin.php:727
 msgid "Your Q&A has been Answered!"
 msgstr "На ваш вопрос был дан ответ!"
+
+#~ msgid ""
+#~ "Enter the default answer. It shows if the answer is published unanswered."
+#~ msgstr ""
+#~ "Введите ответ по умолчанию. Это показывает, если вопрос публикуется без "
+#~ "ответа."
+
+#~ msgid "Ask Tags"
+#~ msgstr "Метки"
+
+#~ msgid "Ask Tag"
+#~ msgstr "Метка"
+
+#~ msgid "Search Ask Tags"
+#~ msgstr "Найти метку"
+
+#~ msgid "All Ask Tags"
+#~ msgstr "Все метки"
+
+#~ msgid "Parent Ask Tag"
+#~ msgstr "Родительская метка"
+
+#~ msgid "Parent Ask Tag:"
+#~ msgstr "Родительский метка:"
+
+#~ msgid "Edit Ask Tag"
+#~ msgstr "Редактировать метку"
+
+#~ msgid "Update Ask Tag"
+#~ msgstr "Обновить метку"
+
+#~ msgid "Add New Ask Tag"
+#~ msgstr "Добавить метку"
+
+#~ msgid "New Ask Tag Name"
+#~ msgstr "Название метки"
+
+#~ msgid "How much Q&A you want to display on one page."
+#~ msgstr "Сколько В&О вы хотите отображать на одной странице."

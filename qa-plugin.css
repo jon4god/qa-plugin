@@ -64,7 +64,6 @@ ul.qa_tags li {
 .qa_pagination ul {
 	display:inline-block;
 	*display:inline;
-/* IE7 inline-block hack */
 	*zoom:1;
 	margin-left:0;
 	margin-bottom:0;
