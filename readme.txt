@@ -1,10 +1,10 @@
-=== Q&A plugin===
-Contributors: Evgeniy Kutsenko
+=== Simple Q&A ===
+Contributors: jon4god
 Donate link: http://starcoms.ru/
 Tags: Q&A, question and answer, question, questions, answer, answers
 Requires at least: 3.0
 Tested up to: 4.4.2
-Stable tag: 1.0
+Stable tag: 1.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -16,7 +16,7 @@ This Plugin allows you to include a simple Textbox through which your site visit
 You can answer them through the backend.<br>
 This plugin is not a dependent version of the plugin <a href="https://wordpress.org/plugins/askme/" target="_blank">Ask Me</a>.<br>
 <br>
-See it in action at: (http://wp.starcoms.ru/qa-plugin/)
+See it in action at: (<a href="http://wp.starcoms.ru/qa-plugin/" target="_blank">http://wp.starcoms.ru/qa-plugin/</a>)
 
 == Installation ==
 
@@ -39,10 +39,17 @@ Place the [qa] shortcode in one of your posts.
 
 == Screenshots ==
 1. Q&A in Action
-2. Waiting question
-3. Setting plugin
+2. Q&A on Frontend
+3. Q&A on Backend
+4. Edit question
+5. Setting plugin
 
 == Changelog ==
+
+= 1.3 =
+* Add pagination setting
+* Add quick link for edit in E-Mail Alert on new Q&A
+* Fix some bugs
 
 = 1.0 =
 * Initial release
