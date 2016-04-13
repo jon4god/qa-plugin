@@ -18,62 +18,6 @@ function qa_init() {
 }
 add_action('plugins_loaded', 'qa_init');
 
-function qa_add_access() {
-  $access_editor = get_option('qa_setting_access_editor');
-  $access_author = get_option('qa_setting_access_author');
-  $access_contributor = get_option('qa_setting_access_contributor');
-  
-  $current_user       = wp_get_current_user();
-  $current_user_roles = $current_user->roles;
-  
-  if ($current_user_roles != 'administrator') {
-    	if ($access_editor=1) {
-      	$role = get_role( 'editor' );
-        $role->add_cap( 'delete_others_posts' ); 
-      } else {
-        $role = get_role( 'editor' );
-        $role->remove_cap( 'delete_others_posts' );
-      }
-      if ($access_author=1) {
-      	$role = get_role( 'author' );
-        $role->add_cap( 'delete_others_posts' ); 
-      } else {
-        $role = get_role( 'author' );
-        $role->remove_cap( 'delete_others_posts' );
-      }
-      if ($access_contributor=1) {
-      	$role = get_role( 'contributor' );
-        $role->add_cap( 'delete_others_posts' ); 
-      } else {
-        $role = get_role( 'contributor' );
-        $role->remove_cap( 'delete_others_posts' );
-      }
-  }
-
-}
-add_action( 'plugins_loaded', 'qa_add_access');
-
-
-function qa_clear_set_capabilities() {
-	$editor = get_role( 'editor' );
-	$author = get_role( 'author' );
-	$contributor = get_role( 'contributor' );
-
-	$caps = array(
-		'manage_options',
-		'delete_posts',
-		'delete_others_posts',
-	);
-
-	foreach ( $caps as $cap ) {
-		$editor->remove_cap( $cap );
-		$author->remove_cap( $cap );
-		$contributor->remove_cap( $cap );
-	}
-}
-add_action( 'plugins_loaded', 'qa_clear_set_capabilities');
-
-
 function qa_activate() {
   set_transient( 'qa-admin-notice', true, 5 );
 }
@@ -655,27 +599,6 @@ function qa_settings_init() {
     'qa_setting_section_menu'
   );
   register_setting( 'reading', 'qa_setting_pagination' );
-  
-  $roles = new WP_Roles();
-  $roles = array_keys($roles->role_names);
-  
-  if (!empty($roles)):
-    foreach ($roles as $role):
-      $accessrole = 'qa_setting_access_' . $role . '';
-      if ($accessrole != 'qa_setting_access_administrator' & $accessrole != 'qa_setting_access_subscriber') {
-      $nameaccessrole = sprintf( __('Access for %1$s edit Q&A', 'simple-qa'), $role );
-      add_settings_field(
-        $accessrole,
-        $nameaccessrole,
-        $accessrole,
-        'reading',
-        'qa_setting_section_menu'
-      );
-      register_setting( 'reading', $accessrole );
-      }
-    endforeach;
-  endif;
-  
 }
 add_action( 'admin_init', 'qa_settings_init' );
 
@@ -685,10 +608,6 @@ function qa_setting_section_menu() {
 add_action('admin_menu', 'qa_setting_section_menu');
 
 function qa_plugin_page(){
-  $roles = new WP_Roles();
-  $roles = array_keys($roles->role_names);
-  $accessrolearr = '';
-    
   wp_enqueue_script('wp-color-picker');
   wp_enqueue_style( 'wp-color-picker');
   echo '<table width="100%">';
@@ -700,21 +619,6 @@ function qa_plugin_page(){
   echo '<form action="options.php" method="post">';
   wp_nonce_field('update-options');
   echo '<table class="form-table">
-  <tr valign="top">
-  <th scope="row">' . __('Access level for plugin', 'simple-qa') . '</th>
-  <td>';
-    if (!empty($roles)):
-      foreach ($roles as $role):
-        $accessrole = 'qa_setting_access_' . $role . '';
-        if ($accessrole != 'qa_setting_access_administrator' & $accessrole != 'qa_setting_access_subscriber') {
-          $accessrolearr .= $accessrole . ',';
-          echo '<input name="'.$accessrole.'" id="'.$accessrole.'" type="checkbox" value="1" class="code" ' . checked( 1, get_option( $accessrole ), false ) . '/>' . $role . '&nbsp;&nbsp;&nbsp;';
-        }
-      endforeach;
-    endif;
-  echo '<p class="description">' . __('Please select all user roles that you wish to allow access to full edit Q&A.', 'simple-qa') . "</p>";
-  echo '</td>
-  </tr>
   <tr valign="top">
   <th scope="row">' . __('E-Mail Alert on new Q&A', 'simple-qa') . '</th>
   <td>';
@@ -797,7 +701,7 @@ function qa_plugin_page(){
   </table>
   </div>
     <input type="hidden" name="action" value="update" />
-    <input type="hidden" name="page_options" value="<?php echo $accessrolearr; ?>qa_setting_pagination,qa_setting_default_answer,qa_setting_background_close,qa_setting_background_open,qa_setting_number_qa,qa_setting_captcha_publickey,qa_setting_captcha_privatekey,qa_setting_user_response,qa_setting_captcha,qa_setting_default_email,qa_setting_email" />
+    <input type="hidden" name="page_options" value="qa_setting_pagination,qa_setting_default_answer,qa_setting_background_close,qa_setting_background_open,qa_setting_number_qa,qa_setting_captcha_publickey,qa_setting_captcha_privatekey,qa_setting_user_response,qa_setting_captcha,qa_setting_default_email,qa_setting_email" />
   <?php
   echo '<p class="submit"><input type="submit" class="button-primary" value="' . __('Save setting', 'simple-qa') .'"></p>
   </form>';
