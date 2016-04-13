@@ -18,6 +18,62 @@ function qa_init() {
 }
 add_action('plugins_loaded', 'qa_init');
 
+function qa_add_access() {
+  $access_editor = get_option('qa_setting_access_editor');
+  $access_author = get_option('qa_setting_access_author');
+  $access_contributor = get_option('qa_setting_access_contributor');
+  
+  $current_user       = wp_get_current_user();
+  $current_user_roles = $current_user->roles;
+  
+  if ($current_user_roles != 'administrator') {
+    	if ($access_editor=1) {
+      	$role = get_role( 'editor' );
+        $role->add_cap( 'delete_others_posts' ); 
+      } else {
+        $role = get_role( 'editor' );
+        $role->remove_cap( 'delete_others_posts' );
+      }
+      if ($access_author=1) {
+      	$role = get_role( 'author' );
+        $role->add_cap( 'delete_others_posts' ); 
+      } else {
+        $role = get_role( 'author' );
+        $role->remove_cap( 'delete_others_posts' );
+      }
+      if ($access_contributor=1) {
+      	$role = get_role( 'contributor' );
+        $role->add_cap( 'delete_others_posts' ); 
+      } else {
+        $role = get_role( 'contributor' );
+        $role->remove_cap( 'delete_others_posts' );
+      }
+  }
+
+}
+add_action( 'plugins_loaded', 'qa_add_access');
+
+
+function qa_clear_set_capabilities() {
+	$editor = get_role( 'editor' );
+	$author = get_role( 'author' );
+	$contributor = get_role( 'contributor' );
+
+	$caps = array(
+		'manage_options',
+		'delete_posts',
+		'delete_others_posts',
+	);
+
+	foreach ( $caps as $cap ) {
+		$editor->remove_cap( $cap );
+		$author->remove_cap( $cap );
+		$contributor->remove_cap( $cap );
+	}
+}
+add_action( 'plugins_loaded', 'qa_clear_set_capabilities');
+
+
 function qa_activate() {
   set_transient( 'qa-admin-notice', true, 5 );
 }
@@ -500,11 +556,11 @@ function qa_stats() {
 add_action('activity_box_end', 'qa_stats');
 
 function qa_settings_init() {
-
+  
   add_settings_field(
     'qa_setting_email',
     __('E-Mail Alert on new Q&A', 'simple-qa'),
-    'qa_setting_callback',
+    'qa_setting_email',
     'reading',
     'qa_setting_section_menu'
   );
@@ -599,6 +655,27 @@ function qa_settings_init() {
     'qa_setting_section_menu'
   );
   register_setting( 'reading', 'qa_setting_pagination' );
+  
+  $roles = new WP_Roles();
+  $roles = array_keys($roles->role_names);
+  
+  if (!empty($roles)):
+    foreach ($roles as $role):
+      $accessrole = 'qa_setting_access_' . $role . '';
+      if ($accessrole != 'qa_setting_access_administrator' & $accessrole != 'qa_setting_access_subscriber') {
+      $nameaccessrole = sprintf( __('Access for %1$s edit Q&A', 'simple-qa'), $role );
+      add_settings_field(
+        $accessrole,
+        $nameaccessrole,
+        $accessrole,
+        'reading',
+        'qa_setting_section_menu'
+      );
+      register_setting( 'reading', $accessrole );
+      }
+    endforeach;
+  endif;
+  
 }
 add_action( 'admin_init', 'qa_settings_init' );
 
@@ -608,8 +685,14 @@ function qa_setting_section_menu() {
 add_action('admin_menu', 'qa_setting_section_menu');
 
 function qa_plugin_page(){
+  $roles = new WP_Roles();
+  $roles = array_keys($roles->role_names);
+  $accessrolearr = '';
+    
   wp_enqueue_script('wp-color-picker');
   wp_enqueue_style( 'wp-color-picker');
+  echo '<table width="100%">';
+  echo '<tr><td valign="top">';
   echo '<div class="wrap">';
   echo "<h2>" . __('Setting for Q&A plugin', 'simple-qa') . "</h2>";
   echo "<h3>" . __('Configure your Q&A', 'simple-qa') . "</h3>";
@@ -617,6 +700,21 @@ function qa_plugin_page(){
   echo '<form action="options.php" method="post">';
   wp_nonce_field('update-options');
   echo '<table class="form-table">
+  <tr valign="top">
+  <th scope="row">' . __('Access level for plugin', 'simple-qa') . '</th>
+  <td>';
+    if (!empty($roles)):
+      foreach ($roles as $role):
+        $accessrole = 'qa_setting_access_' . $role . '';
+        if ($accessrole != 'qa_setting_access_administrator' & $accessrole != 'qa_setting_access_subscriber') {
+          $accessrolearr .= $accessrole . ',';
+          echo '<input name="'.$accessrole.'" id="'.$accessrole.'" type="checkbox" value="1" class="code" ' . checked( 1, get_option( $accessrole ), false ) . '/>' . $role . '&nbsp;&nbsp;&nbsp;';
+        }
+      endforeach;
+    endif;
+  echo '<p class="description">' . __('Please select all user roles that you wish to allow access to full edit Q&A.', 'simple-qa') . "</p>";
+  echo '</td>
+  </tr>
   <tr valign="top">
   <th scope="row">' . __('E-Mail Alert on new Q&A', 'simple-qa') . '</th>
   <td>';
@@ -626,14 +724,14 @@ function qa_plugin_page(){
   <tr valign="top">
   <th scope="row">' . __('Default e-mail', 'simple-qa') . '</th>
   <td>';
-  echo '<input name="qa_setting_default_email" id="qa_setting_default_email" size="80" type="text" class="code" value="' . get_option( 'qa_setting_default_email') . '" />
+  echo '<input name="qa_setting_default_email" id="qa_setting_default_email" size="60" type="text" class="code" value="' . get_option( 'qa_setting_default_email') . '" />
         <p class="description">' . __('Enter the default e-mail. If not entered, it is sent to the administrator.', 'simple-qa') . "</p>";
   echo '</td>
   </tr>
   <tr valign="top">
   <th scope="row">' . __('Default answer', 'simple-qa') . '</th>
   <td>';
-  echo '<input name="qa_setting_default_answer" id="qa_setting_default_answer" size="80" type="text" class="code" value="' . get_option( 'qa_setting_default_answer') . '" />
+  echo '<input name="qa_setting_default_answer" id="qa_setting_default_answer" size="60" type="text" class="code" value="' . get_option( 'qa_setting_default_answer') . '" />
         <p class="description">' . __('Enter the default answer. It shows if the question is published unanswered.', 'simple-qa') . "</p>";
   echo '</td>
   </tr>
@@ -691,15 +789,15 @@ function qa_plugin_page(){
        <input type="radio" id="qa_setting_pagination_top" value="0" name="qa_setting_pagination" <?php if($qa_setting_pagination == 0) { ?> checked="checked" <?php } ?>/>
        <label for="qa_setting_pagination_top"><?php _e('Top', 'simple-qa') ?></label>
        <input type="radio" value="1" id="qa_setting_pagination_bottom" name="qa_setting_pagination"<?php if($qa_setting_pagination == 1) { ?> checked="checked" <?php } ?>/>
-        <label for="qa_setting_pagination_bottom"><?php  _e('Bottom', 'simple-qa') ?></label>
+        <label for="qa_setting_pagination_bottom"><?php _e('Bottom', 'simple-qa') ?></label>
        <input type="radio" value="2" id="qa_setting_pagination_both" name="qa_setting_pagination"<?php if($qa_setting_pagination == 2) { ?> checked="checked" <?php } ?>/>
-       <label for="qa_setting_pagination_both"><?php  _e('Both', 'simple-qa') ?></label>
+       <label for="qa_setting_pagination_both"><?php _e('Both', 'simple-qa') ?></label>
     </td>
   </tr>
   </table>
   </div>
     <input type="hidden" name="action" value="update" />
-    <input type="hidden" name="page_options" value="qa_setting_pagination,qa_setting_default_answer,qa_setting_background_close,qa_setting_background_open,qa_setting_number_qa,qa_setting_captcha_publickey,qa_setting_captcha_privatekey,qa_setting_user_response,qa_setting_captcha,qa_setting_default_email,qa_setting_email" />
+    <input type="hidden" name="page_options" value="<?php echo $accessrolearr; ?>qa_setting_pagination,qa_setting_default_answer,qa_setting_background_close,qa_setting_background_open,qa_setting_number_qa,qa_setting_captcha_publickey,qa_setting_captcha_privatekey,qa_setting_user_response,qa_setting_captcha,qa_setting_default_email,qa_setting_email" />
   <?php
   echo '<p class="submit"><input type="submit" class="button-primary" value="' . __('Save setting', 'simple-qa') .'"></p>
   </form>';
@@ -710,6 +808,28 @@ function qa_plugin_page(){
     $('#qa_setting_background_close').wpColorPicker();
   });
   </script>
+  </td>
+  <td valign="top" align="left" width="45em">
+  <div style="padding: 1.5em; background-color: #FAFAFA; border: 1px solid #ddd; margin: 1em; float: right; width: 22em;">
+	<h3><?php _e('Thanks for using Simple Q&A', 'simple-qa') ?></h3>
+	<p style="float: right; margin: 0 0 1em 1em;"><a href="http://starcoms.ru" target="_blank"><?php echo get_avatar("jon4god@mail.ru", '64'); ?></a></p>
+	<p><?php _e('Dear admin!<br />Thank you for using my plugin!<br />I hope it is useful for your site.', 'simple-qa') ?></p>
+	<p><a href="http://starcoms.ru" target="_blank"><?php _e('Evgeniy Kutsenko', 'simple-qa') ?></a></p>
+
+	<h3><?php _e('I like this plugin<br>– how can I thank you?', 'simple-qa') ?></h3>
+	<p><?php _e('There are several ways for you to say thanks:', 'simple-qa') ?></p>
+	<ul style="list-style-type: disc; margin-left: 20px;">
+		<li><?php printf(__('<a href="%1$s" target="_blank">Buy me a cup of coffee</a> to stay awake and work on this plugin', 'simple-qa'), "https://www.paypal.me/jon4god") ?></li>
+		<li><?php printf(__('<a href="%1$s" target="_blank">Give 5 stars</a> over at the WordPress Plugin Directory', 'simple-qa'), "https://wordpress.org/support/view/plugin-reviews/simple-qa") ?></li>
+		<li><?php printf(__('Share infotmation or make a nice blog post about the plugin', 'simple-qa')) ?></li>
+	</ul>
+
+	<h3><?php _e('Support', 'simple-qa') ?></h3>
+	<p><?php printf(__('Please see the <a href="%1$s" target="_blank">support forum</a> or <a href="%2$s" target="_blank">plugin\'s site</a> for help.', 'simple-qa'), "https://wordpress.org/support/plugin/simple-qa", "http://wp.starcoms.ru/qa-plugin/") ?></p>
+	
+	<h1><?php _e("Good luck!", 'simple-qa') ?></h1>
+  </div>
+  </td></tr></table>
   <?php
 }
 
