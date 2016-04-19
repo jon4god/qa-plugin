@@ -113,30 +113,25 @@ function qa_title_placeholder( $title ){
 add_filter( 'enter_title_here', 'qa_title_placeholder' );
 
 function show_qa(  ) {
+
   $isCaptcha = get_option('qa_setting_captcha');
-  if($isCaptcha)
-  {
-    require_once(dirname(__FILE__).'/ReCaptcha/ReCaptcha.php');
-    require_once(dirname(__FILE__).'/ReCaptcha/RequestMethod.php');
-    require_once(dirname(__FILE__).'/ReCaptcha/RequestParameters.php');
-    require_once(dirname(__FILE__).'/ReCaptcha/Response.php');
-    require_once(dirname(__FILE__).'/ReCaptcha/RequestMethod/Post.php');
-    require_once(dirname(__FILE__).'/ReCaptcha/RequestMethod/Socket.php');
-    require_once(dirname(__FILE__).'/ReCaptcha/RequestMethod/SocketPost.php');
+  if($isCaptcha) {
+    require_once(dirname(__FILE__).'/autoload.php');
     $publickey = get_option( 'qa_setting_captcha_publickey' );
     $privatekey = get_option( 'qa_setting_captcha_privatekey' );
     $resp = null;
     $error = null;
     $lang = get_bloginfo('language');
   }
+
   ob_start();
-    
+
   if (is_rtl()) {
     wp_enqueue_style( 'qa', plugins_url('css/qa-plugin-rtl.css',__FILE__) );
   } else {
     wp_enqueue_style( 'qa', plugins_url('css/qa-plugin.css',__FILE__) );
   }
-  
+
   if( 'POST' == $_SERVER['REQUEST_METHOD']
     && !empty( $_POST['action'] )
     && $_POST['post_type'] == 'qa' && $_POST['question'] != "")
@@ -506,110 +501,23 @@ function qa_stats() {
 add_action('activity_box_end', 'qa_stats');
 
 function qa_settings_init() {
-  
-  add_settings_field(
-    'qa_setting_email',
-    __('E-Mail Alert on new Q&A', 'simple-qa'),
-    'qa_setting_email',
-    'reading',
-    'qa_setting_section_menu'
-  );
-  register_setting( 'reading', 'qa_setting_email' );
-
-  add_settings_field(
-    'qa_setting_default_email',
-    __('Default e-mail', 'simple-qa'),
-    'qa_setting_default_email',
-    'reading',
-    'qa_setting_section_menu'
-  );
-  register_setting( 'reading', 'qa_setting_default_email' );
-
-  add_settings_field(
-    'qa_setting_default_answer',
-    __('Default answer', 'simple-qa'),
-    'qa_setting_default_answer',
-    'reading',
-    'qa_setting_section_menu'
-  );
-  register_setting( 'reading', 'qa_setting_default_answer' );
-
-  add_settings_field(
-    'qa_setting_user_response',
-    __('User Fields', 'simple-qa'),
-    'qa_setting_user_response_callback',
-    'reading',
-    'qa_setting_section_menu'
-  );
-  register_setting( 'reading', 'qa_setting_user_response' );
-
-  add_settings_field(
-      'qa_setting_captcha',
-      __('Show Captcha', 'simple-qa'),
-      'qa_captcha_callback',
-      'reading',
-      'qa_setting_section_menu'
-  );
-  register_setting( 'reading', 'qa_setting_captcha' );
-
-  add_settings_field(
-      'qa_setting_captcha_publickey',
-      __('Captcha Public Key', 'simple-qa'),
-      'qa_captcha_puk_callback',
-      'reading',
-      'qa_setting_section_menu'
-  );
-  register_setting( 'reading', 'qa_setting_captcha_publickey' );
-
-  add_settings_field(
-    'qa_setting_captcha_privatekey',
-    __('Captcha Private Key', 'simple-qa'),
-    'qa_captcha_prk_callback',
-    'reading',
-    'qa_setting_section_menu'
-  );
-  register_setting( 'reading', 'qa_setting_captcha_privatekey' );
-
-  add_settings_field(
-    'qa_setting_number_qa',
-    __('Number of Q&A', 'simple-qa'),
-    'qa_number_callback',
-    'reading',
-    'qa_setting_section_menu'
-  );
-  register_setting( 'reading', 'qa_setting_number_qa' );
-
-  add_settings_field(
-    'qa_setting_background_open',
-    __('Color background open Q&A', 'simple-qa'),
-    'qa_number_background_open',
-    'reading',
-    'qa_setting_section_menu'
-  );
-  register_setting( 'reading', 'qa_setting_background_open' );
-
-  add_settings_field(
-    'qa_setting_background_close',
-    __('Color background close Q&A', 'simple-qa'),
-    'qa_number_background_close',
-    'reading',
-    'qa_setting_section_menu'
-  );
-  register_setting( 'reading', 'qa_setting_background_close' );
-  
-  add_settings_field(
-    'qa_setting_pagination',
-    __('Pagination', 'simple-qa'),
-    'qa_setting_pagination',
-    'reading',
-    'qa_setting_section_menu'
-  );
-  register_setting( 'reading', 'qa_setting_pagination' );
+  register_setting( 'qa_setting', 'qa_setting_email' );
+  register_setting( 'qa_setting', 'qa_setting_default_email' );
+  register_setting( 'qa_setting', 'qa_setting_default_answer' );
+  register_setting( 'qa_setting', 'qa_setting_user_response' );
+  register_setting( 'qa_setting', 'qa_setting_captcha' );
+  register_setting( 'qa_setting', 'qa_setting_captcha_publickey' );
+  register_setting( 'qa_setting', 'qa_setting_captcha_privatekey' );
+  register_setting( 'qa_setting', 'qa_setting_number_qa' );
+  register_setting( 'qa_setting', 'qa_setting_background_open' );
+  register_setting( 'qa_setting', 'qa_setting_background_close' );
+  register_setting( 'qa_setting', 'qa_setting_font_color' );
+  register_setting( 'qa_setting', 'qa_setting_pagination' );
 }
-add_action( 'admin_init', 'qa_settings_init' );
 
 function qa_setting_section_menu() {
   add_options_page(__('Q&A Settings', 'simple-qa'), __('Q&A Settings', 'simple-qa'), 'manage_options', 'qa-plugin', 'qa_plugin_page');
+  add_action( 'admin_init', 'qa_settings_init' );
 }
 add_action('admin_menu', 'qa_setting_section_menu');
 
@@ -623,7 +531,7 @@ function qa_plugin_page(){
   echo "<h3>" . __('Configure your Q&A', 'simple-qa') . "</h3>";
   
   echo '<form action="options.php" method="post">';
-  wp_nonce_field('update-options');
+  settings_fields( 'qa_setting' );
   echo '<table class="form-table">
   <tr valign="top">
   <th scope="row">' . __('E-Mail Alert on new Q&A', 'simple-qa') . '</th>
@@ -692,6 +600,13 @@ function qa_plugin_page(){
         <p class="description">' . __('Set color background close tab Q&A.', 'simple-qa') . "</p>";
   echo '</td>
   </tr>';
+  echo '<tr valign="top">
+  <th scope="row">' . __('Font color for Q&A', 'simple-qa') . '</th>
+  <td>';
+  echo '<input name="qa_setting_font_color" id="qa_setting_font_color" type="text" value="' . get_option( 'qa_setting_font_color' ) . '" data-default-color="#fff"/>
+        <p class="description">' . __('Set font color for Q&A tab.', 'simple-qa') . "</p>";
+  echo '</td>
+  </tr>';
   ?>
   <tr valign="top">
     <th scope="row"><?php _e('Show pagination', 'simple-qa') ?></th>
@@ -706,16 +621,15 @@ function qa_plugin_page(){
   </tr>
   </table>
   </div>
-    <input type="hidden" name="action" value="update" />
-    <input type="hidden" name="page_options" value="qa_setting_pagination,qa_setting_default_answer,qa_setting_background_close,qa_setting_background_open,qa_setting_number_qa,qa_setting_captcha_publickey,qa_setting_captcha_privatekey,qa_setting_user_response,qa_setting_captcha,qa_setting_default_email,qa_setting_email" />
   <?php
-  echo '<p class="submit"><input type="submit" class="button-primary" value="' . __('Save setting', 'simple-qa') .'"></p>
-  </form>';
+  submit_button();
+  echo '</form>';
   ?>
   <script type="text/javascript">
   jQuery(document).ready(function($) {   
     $('#qa_setting_background_open').wpColorPicker();
     $('#qa_setting_background_close').wpColorPicker();
+    $('#qa_setting_font_color').wpColorPicker();
   });
   </script>
   </td>
@@ -775,9 +689,10 @@ add_action( 'publish_qa', 'publish_qa_hook' );
 function qa_css_hook( ) {
   $background_open = get_option( 'qa_setting_background_open');
   $background_close = get_option( 'qa_setting_background_close');
+  $color_font = get_option( 'qa_setting_font_color');
 ?>
   <style type='text/css'>
-    ul.akkordeon li > p {background: <?php echo $background_close; ?>;}
+    ul.akkordeon li > p {background: <?php echo $background_close; ?>; color: <?php echo $color_font; ?>;}
     ul.akkordeon li > p:hover {background: <?php echo $background_close; ?>;}
     ul.akkordeon li > p.active {background: <?php echo $background_open; ?>;}
   </style>
