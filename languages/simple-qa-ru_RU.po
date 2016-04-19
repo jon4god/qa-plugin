@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Q&A Plugin\n"
-"POT-Creation-Date: 2016-04-14 09:40+0300\n"
-"PO-Revision-Date: 2016-04-14 09:43+0300\n"
+"POT-Creation-Date: 2016-04-19 17:51+0300\n"
+"PO-Revision-Date: 2016-04-19 17:51+0300\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ru_RU\n"
@@ -28,7 +28,7 @@ msgstr "Пожалуйста, установите настройки для п�
 msgid "Settings"
 msgstr "Настройки"
 
-#: qa-plugin.php:46 qa-plugin.php:47 qa-plugin.php:59 qa-plugin.php:364
+#: qa-plugin.php:46 qa-plugin.php:47 qa-plugin.php:59 qa-plugin.php:365
 msgid "Q&A"
 msgstr "В&О"
 
@@ -40,7 +40,7 @@ msgstr "Новый В&О"
 msgid "Add new Q&A"
 msgstr "Добавить новый В&О"
 
-#: qa-plugin.php:50 qa-plugin.php:165
+#: qa-plugin.php:50 qa-plugin.php:166
 msgid "Edit Q&A"
 msgstr "Изменить В&О"
 
@@ -104,51 +104,51 @@ msgstr "Название новой метки В&О"
 msgid "your question here"
 msgstr "Ваш вопрос здесь"
 
-#: qa-plugin.php:150 qa-plugin.php:187
+#: qa-plugin.php:151 qa-plugin.php:188
 msgid "<b>Success!</b> Q&A is now ready for approval."
 msgstr "<b>Получилось!</b> В&О снова готов к работе."
 
-#: qa-plugin.php:165
+#: qa-plugin.php:166
 msgid "Delete Q&A"
 msgstr "Удалить В&О"
 
-#: qa-plugin.php:166 qa-plugin.php:202
+#: qa-plugin.php:167 qa-plugin.php:203
 msgid "New Q&A Received"
 msgstr "Новая редакция В&О"
 
-#: qa-plugin.php:170
+#: qa-plugin.php:171
 msgid "Q&A: "
 msgstr "В&О: "
 
-#: qa-plugin.php:175
+#: qa-plugin.php:176
 msgid "<b>Error!</b> The Captcha was wrong."
 msgstr "<b>Ошибка!</b> Неправильная капча."
 
-#: qa-plugin.php:210
+#: qa-plugin.php:211
 msgid "<b>Error!</b> You have to fill out the Captcha."
 msgstr "<b>Ошибка!</b> Введите защитный код."
 
-#: qa-plugin.php:215
+#: qa-plugin.php:216
 msgid "<b>Error!</b> You have to fill out the Question."
 msgstr "<b>Ошибка!</b> Вы должны написать вопрос."
 
-#: qa-plugin.php:221
+#: qa-plugin.php:222
 msgid "Question to ask"
 msgstr "Задайте ваш вопрос"
 
-#: qa-plugin.php:237
+#: qa-plugin.php:238
 msgid "Submit"
 msgstr "Отправить"
 
-#: qa-plugin.php:255
+#: qa-plugin.php:256
 msgid "Name"
 msgstr "Ваше имя"
 
-#: qa-plugin.php:259 qa-plugin.php:368
+#: qa-plugin.php:260 qa-plugin.php:369
 msgid "Email"
 msgstr "Эл. почта"
 
-#: qa-plugin.php:261
+#: qa-plugin.php:262
 msgid ""
 "If you provide an Email you will receive a message, once your Question is "
 "Answered."
@@ -156,133 +156,105 @@ msgstr ""
 "Если введёте электронную почту, то получите письмо, как только будет дан "
 "ответ."
 
-#: qa-plugin.php:315
+#: qa-plugin.php:316
 msgid "Anonymous"
 msgstr "Аноним"
 
-#: qa-plugin.php:363
+#: qa-plugin.php:364
 msgid "Date"
 msgstr "Дате"
 
-#: qa-plugin.php:365
+#: qa-plugin.php:366
 msgid "Answer"
 msgstr "Ответ"
 
-#: qa-plugin.php:366
+#: qa-plugin.php:367
 msgid "Username"
 msgstr "Имя"
 
-#: qa-plugin.php:367
+#: qa-plugin.php:368
 msgid "ip"
 msgstr "IP  Адрес"
 
-#: qa-plugin.php:411
+#: qa-plugin.php:412
 msgid "Name and Email"
 msgstr "Имя и Email"
 
-#: qa-plugin.php:420
+#: qa-plugin.php:421
 msgid "Username: "
 msgstr "Имя: "
 
-#: qa-plugin.php:421
+#: qa-plugin.php:422
 msgid "IP: "
 msgstr "IP: "
 
-#: qa-plugin.php:422
+#: qa-plugin.php:423
 msgid "E-mail: "
 msgstr "Эл.почта: "
 
-#: qa-plugin.php:458
+#: qa-plugin.php:459
 msgid "First"
 msgstr "Первый"
 
-#: qa-plugin.php:464
+#: qa-plugin.php:465
 msgid "Last"
 msgstr "Последний"
 
-#: qa-plugin.php:471
+#: qa-plugin.php:472
 msgid "Q&A - Overview"
 msgstr "В&О - Oбзор"
 
-#: qa-plugin.php:483
+#: qa-plugin.php:484
 msgid "published"
 msgstr "опубликован(-о)"
 
-#: qa-plugin.php:493
+#: qa-plugin.php:494
 msgid "open"
 msgstr "открыт(-ы)"
 
-#: qa-plugin.php:506 qa-plugin.php:623
-msgid "E-Mail Alert on new Q&A"
-msgstr "Оповещения по электронной почте о новых В&О"
-
-#: qa-plugin.php:515 qa-plugin.php:629
-msgid "Default e-mail"
-msgstr "Адрес электронной почты по-умолчанию"
-
-#: qa-plugin.php:524 qa-plugin.php:636
-msgid "Default answer"
-msgstr "Ответ по-умолчанию"
-
-#: qa-plugin.php:533 qa-plugin.php:643
-msgid "User Fields"
-msgstr "Пользовательские поля"
-
-#: qa-plugin.php:542 qa-plugin.php:649
-msgid "Show Captcha"
-msgstr "Настройки капчи"
-
-#: qa-plugin.php:551 qa-plugin.php:662
-msgid "Captcha Public Key"
-msgstr "Captcha Public Key"
-
-#: qa-plugin.php:560 qa-plugin.php:655
-msgid "Captcha Private Key"
-msgstr "Captcha Private Key"
-
-#: qa-plugin.php:569 qa-plugin.php:669
-msgid "Number of Q&A"
-msgstr "Количество В&О"
-
-#: qa-plugin.php:578 qa-plugin.php:676
-msgid "Color background open Q&A"
-msgstr "Цвет фона открытой вкладки В&О"
-
-#: qa-plugin.php:587 qa-plugin.php:683
-msgid "Color background close Q&A"
-msgstr "Цвет фона закрытой вкладки В&О"
-
-#: qa-plugin.php:596
-msgid "Pagination"
-msgstr "Разбивка на страницы"
-
-#: qa-plugin.php:606
+#: qa-plugin.php:519
 msgid "Q&A Settings"
 msgstr "Настройки В&О"
 
-#: qa-plugin.php:616
+#: qa-plugin.php:530
 msgid "Setting for Q&A plugin"
 msgstr "Настройки для В&О плагина"
 
-#: qa-plugin.php:617
+#: qa-plugin.php:531
 msgid "Configure your Q&A"
 msgstr "Настройте ваш В&О"
 
-#: qa-plugin.php:632
+#: qa-plugin.php:537
+msgid "E-Mail Alert on new Q&A"
+msgstr "Оповещения по электронной почте о новых В&О"
+
+#: qa-plugin.php:543
+msgid "Default e-mail"
+msgstr "Адрес электронной почты по-умолчанию"
+
+#: qa-plugin.php:546
 msgid ""
 "Enter the default e-mail. If not entered, it is sent to the administrator."
 msgstr ""
 "Введите адрес электронной почты по умолчанию. Если не введен, то "
 "отправляется администратору."
 
-#: qa-plugin.php:639
+#: qa-plugin.php:550
+msgid "Default answer"
+msgstr "Ответ по-умолчанию"
+
+#: qa-plugin.php:553
 msgid ""
 "Enter the default answer. It shows if the question is published unanswered."
 msgstr ""
 "Введите ответ по умолчанию. Это показывает, если вопрос публикуется без "
 "ответа."
 
-#: qa-plugin.php:645
+#: qa-plugin.php:557
+msgid "User Fields"
+msgstr "Пользовательские поля"
+
+#: qa-plugin.php:559
 msgid ""
 "Would you like to display User Fields, like E-Mail and Username? This would "
 "give your users the possibility to receive a Notification if an Answer is "
@@ -292,7 +264,15 @@ msgstr ""
 "вашим пользователям возможность получать уведомление, если получен ответ на "
 "вопрос."
 
-#: qa-plugin.php:658 qa-plugin.php:665
+#: qa-plugin.php:563
+msgid "Show Captcha"
+msgstr "Настройки капчи"
+
+#: qa-plugin.php:569
+msgid "Captcha Private Key"
+msgstr "Captcha Private Key"
+
+#: qa-plugin.php:572 qa-plugin.php:579
 msgid ""
 "Get a key from <a href=\"https://www.google.com/recaptcha/admin/create\" "
 "target=\"_blank\">https://www.google.com/recaptcha/admin/create</a>"
@@ -300,43 +280,63 @@ msgstr ""
 "Получить ключ из <a href=\"https://www.google.com/recaptcha/admin/create\" "
 "target=\"_blank\">https://www.google.com/recaptcha/admin/create</a>"
 
-#: qa-plugin.php:672
+#: qa-plugin.php:576
+msgid "Captcha Public Key"
+msgstr "Captcha Public Key"
+
+#: qa-plugin.php:583
+msgid "Number of Q&A"
+msgstr "Количество В&О"
+
+#: qa-plugin.php:586
 msgid "How much questions you want to display on one page."
 msgstr "Сколько вопросов вы хотите отобразить на одной странице."
 
-#: qa-plugin.php:679
+#: qa-plugin.php:590
+msgid "Color background open Q&A"
+msgstr "Цвет фона открытой вкладки В&О"
+
+#: qa-plugin.php:593
 msgid "Set color background open tab Q&A."
 msgstr "Цвет фона открытой вкладки В&О"
 
-#: qa-plugin.php:686
+#: qa-plugin.php:597
+msgid "Color background close Q&A"
+msgstr "Цвет фона закрытой вкладки В&О"
+
+#: qa-plugin.php:600
 msgid "Set color background close tab Q&A."
 msgstr "Цвет фона закрытой вкладки В&О"
 
-#: qa-plugin.php:691
+#: qa-plugin.php:604
+msgid "Font color for Q&A"
+msgstr "Цвет шрифта для В&О"
+
+#: qa-plugin.php:607
+msgid "Set font color for Q&A tab."
+msgstr "Задайте цвет шрифта для вкладки В&О."
+
+#: qa-plugin.php:612
 msgid "Show pagination"
 msgstr "Показать постраничную навигацию"
 
-#: qa-plugin.php:694
+#: qa-plugin.php:615
 msgid "Top"
 msgstr "Сверху"
 
-#: qa-plugin.php:696
+#: qa-plugin.php:617
 msgid "Bottom"
 msgstr "Снизу"
 
-#: qa-plugin.php:698
+#: qa-plugin.php:619
 msgid "Both"
 msgstr "Оба варианта"
 
-#: qa-plugin.php:706
-msgid "Save setting"
-msgstr "Сохранить настройки"
-
-#: qa-plugin.php:718
+#: qa-plugin.php:638
 msgid "Thanks for using Simple Q&A"
 msgstr "Спасибо за использование В&О"
 
-#: qa-plugin.php:720
+#: qa-plugin.php:640
 msgid ""
 "Dear admin!<br />Thank you for using my plugin!<br />I hope it is useful for "
 "your site."
@@ -344,19 +344,19 @@ msgstr ""
 "Уважаемый Администратор!<br>Спасибо за использование моего плагина !<br> Я "
 "надеюсь, что он оказался полезен для вашего сайта."
 
-#: qa-plugin.php:721
+#: qa-plugin.php:641
 msgid "Evgeniy Kutsenko"
 msgstr "Евгений Куценко"
 
-#: qa-plugin.php:723
+#: qa-plugin.php:643
 msgid "I like this plugin<br>– how can I thank you?"
 msgstr "Мне нравится этот плагин<br>– как я могу отблагодарить вас?"
 
-#: qa-plugin.php:724
+#: qa-plugin.php:644
 msgid "There are several ways for you to say thanks:"
 msgstr "Есть несколько возможностей, сказать спасибо:"
 
-#: qa-plugin.php:726
+#: qa-plugin.php:646
 #, php-format
 msgid ""
 "<a href=\"%1$s\" target=\"_blank\">Buy me a cup of coffee</a> to stay awake "
@@ -365,7 +365,7 @@ msgstr ""
 "<a href=\"%1$s\" target=\"_blank\">Купить мне чашечку кофе</a>, чтобы я не "
 "спал и работал над этим плагином"
 
-#: qa-plugin.php:727
+#: qa-plugin.php:647
 #, php-format
 msgid ""
 "<a href=\"%1$s\" target=\"_blank\">Give 5 stars</a> over at the WordPress "
@@ -374,15 +374,15 @@ msgstr ""
 "<a href=\"%1$s\" target=\"_blank\">Поставьте 5 звезд</a> в каталоге плагинов "
 "WordPress"
 
-#: qa-plugin.php:728
+#: qa-plugin.php:648
 msgid "Share infotmation or make a nice blog post about the plugin"
 msgstr "Распространить информацию или написать заметку в вашем блоге о плагине"
 
-#: qa-plugin.php:731
+#: qa-plugin.php:651
 msgid "Support"
 msgstr "Поддержка"
 
-#: qa-plugin.php:732
+#: qa-plugin.php:652
 #, php-format
 msgid ""
 "Please see the <a href=\"%1$s\" target=\"_blank\">support forum</a> or <a "
@@ -391,17 +391,23 @@ msgstr ""
 "См. <a href=\"%1$s\" target=\"_blank\">форум поддержки</a> или <a href=\"%2$s"
 "\" target=\"_blank\">сайт плагина</a> для получения справки."
 
-#: qa-plugin.php:734
+#: qa-plugin.php:654
 msgid "Good luck!"
 msgstr "Удачи!"
 
-#: qa-plugin.php:765
+#: qa-plugin.php:685
 msgid " - Q&A - Answer Received"
 msgstr " - В&О - получен ответ"
 
-#: qa-plugin.php:765
+#: qa-plugin.php:685
 msgid "Your Q&A has been Answered!"
 msgstr "На ваш вопрос был дан ответ!"
+
+#~ msgid "Pagination"
+#~ msgstr "Разбивка на страницы"
+
+#~ msgid "Save setting"
+#~ msgstr "Сохранить настройки"
 
 #~ msgid "All"
 #~ msgstr "Все"
