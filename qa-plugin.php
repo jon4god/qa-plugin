@@ -3,7 +3,7 @@
  * Plugin Name: Simple Q&A
  * Plugin URI: http://wp.starcoms.ru/qa-plugin/
  * Description: Simple Plugin to let your users ask questions.
- * Version: 1.3
+ * Version: 1.4
  * Author: jon4god
  * Author URI: http://starcoms.ru
  * Text Domain: simple-qa
@@ -130,7 +130,13 @@ function show_qa(  ) {
     $lang = get_bloginfo('language');
   }
   ob_start();
-  wp_enqueue_style( 'qa', plugins_url('qa-plugin.css',__FILE__) );
+    
+  if (is_rtl()) {
+    wp_enqueue_style( 'qa', plugins_url('css/qa-plugin-rtl.css',__FILE__) );
+  } else {
+    wp_enqueue_style( 'qa', plugins_url('css/qa-plugin.css',__FILE__) );
+  }
+  
   if( 'POST' == $_SERVER['REQUEST_METHOD']
     && !empty( $_POST['action'] )
     && $_POST['post_type'] == 'qa' && $_POST['question'] != "")
