@@ -38,8 +38,8 @@
 	margin-right:10px;
 }
 
-ul.qa_tags li {
-	display:inline-block;
+li.qa_block {
+	border-bottom:1px solid #fff;
 }
 
 .label {
@@ -80,7 +80,7 @@ ul.qa_tags li {
 	background:#f5f5f5;
 	border-color:#ddd;
 	border: 1px solid #ddd;
-  	border-right-width: 0;
+	border-right-width: 0;
 }
 
 .qa_pagination .active a {
@@ -108,7 +108,7 @@ ul.qa_tags li {
 
 .userDiv {
 	margin-top:5px;
-	}
+}
 
 .userlabel {
 	float:right;
@@ -170,7 +170,6 @@ ul.akkordeon li > p {
 	font-size:14px;
 	margin:0;
 	padding:10px;
-	color:#fff;
 	text-shadow:0 1px 1px #494949;
 	cursor:pointer;
 }

@@ -3,7 +3,7 @@
  * Plugin Name: Simple Q&A
  * Plugin URI: http://wp.starcoms.ru/qa-plugin/
  * Description: Simple Plugin to let your users ask questions.
- * Version: 1.4
+ * Version: 1.6
  * Author: jon4god
  * Author URI: http://starcoms.ru
  * Text Domain: simple-qa
@@ -288,23 +288,8 @@ function qa_output_normal() {
     <div>
     <?php if($qa_setting_pagination == 0 || $qa_setting_pagination == 2 ) { qa_pagination($wp_query->max_num_pages); } ?>
     <ul class='akkordeon'>
-    <?php while ( have_posts() ) : the_post();
-      $allterms = get_the_terms(get_the_ID(), "qatag");
-        if(!empty($allterms))
-        {
-          $i = 0;
-          foreach($allterms as $term)
-          {
-            $qa_tags = $term->name;
-            $i++;
-            if($i != count($allterms))
-            {
-              echo " ";
-            }
-          }
-        }
-        ?>
-      <li class="<?php echo $qa_tags; ?>" style="border-bottom:1px solid #fff;">
+    <?php while ( have_posts() ) : the_post();?>
+      <li class="qa_block">
         <p>
           <?php
             $customs = get_post_custom(get_the_ID());
@@ -442,28 +427,29 @@ function qa_save($postID) {
 }
 add_action('save_post', 'qa_save');
 
-function qa_pagination($pages = '', $range = 5) {
-  $showitems = ($range * 2) + 1;
+function qa_pagination($pages = '', $range = 2) {  
+  $showitems = ($range * 2)+1;
   global $paged;
-  if (empty($paged))
-    $paged = 1;
-  if ($pages == '') {
-    global $wp_query;
-    $pages = $wp_query->max_num_pages;
-    if (!$pages) {
-      $pages = 1;
-    }
-  }
-  if (1 != $pages) {
-    echo '<div><ul class="qa_pagination">';
-    echo '<li><a href="' . get_pagenum_link(1) . '" title="'.__('First','framework').'">«</a></li>';
-    for ($i = 1; $i <= $pages; $i++) {
-      if (1 != $pages && (!($i >= $paged + $range + 3 || $i <= $paged - $range - 3) || $pages <= $showitems )) {
-        echo ($paged == $i) ? "<li class=\"active\"><span>" . $i . "</span></li>" : "<li><a href='" . get_pagenum_link($i) . "' class=\"\">" . $i . "</a></li>";
-      }
-    }
-    echo '<li><a href="' . get_pagenum_link($pages) . '" title="'.__('Last','framework').'">»</a></li>';
-    echo '</ul></div>';
+  if(empty($paged)) $paged = 1;
+  if($pages == '') {
+     global $wp_query;
+     $pages = $wp_query->max_num_pages;
+     if(!$pages) {
+         $pages = 1;
+     }
+  }   
+  if(1 != $pages) {
+     echo "<div><ul class='qa_pagination'>";
+     echo '<li><a href="' . get_pagenum_link(1) . '" title="'.__('First','simple-qa').'">«</a></li>';
+     if($paged > 1 && $showitems < $pages) echo "<li><a href='".get_pagenum_link($paged - 1)."' title='".__('Previous','simple-qa')."'>&lsaquo;</a></li>";
+     for ($i=1; $i <= $pages; $i++) {
+        if (1 != $pages &&( !($i >= $paged+$range+1 || $i <= $paged-$range-1) || $pages <= $showitems )) {
+          echo ($paged == $i)? "<li class='active'><span>".$i."</span></li>":"<li><a href='".get_pagenum_link($i)."' class='inactive' >".$i."</a></li>";
+        }
+     }
+     if ($paged < $pages && $showitems < $pages) echo "<li><a href='".get_pagenum_link($paged + 1)."' title='".__('Next','simple-qa')."'>&rsaquo;</a></li>";  
+     echo '<li><a href="' . get_pagenum_link($pages) . '" title="'.__('Last','simple-qa').'">»</a></li>';
+     echo "</ul></div>\n";
   }
 }
 
