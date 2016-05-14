@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Simple Q&A\n"
-"POT-Creation-Date: 2016-04-19 18:16+0300\n"
+"POT-Creation-Date: 2016-05-14 21:29+0300\n"
 "PO-Revision-Date: 2016-04-19 18:16+0300\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -28,360 +28,436 @@ msgstr ""
 msgid "Settings"
 msgstr ""
 
-#: qa-plugin.php:46 qa-plugin.php:47 qa-plugin.php:59 qa-plugin.php:365
+#: qa-plugin.php:56
+msgid "Q&A "
+msgstr ""
+
+#: qa-plugin.php:57 qa-plugin.php:69 qa-plugin.php:443
 msgid "Q&A"
 msgstr ""
 
-#: qa-plugin.php:48 qa-plugin.php:51
+#: qa-plugin.php:58 qa-plugin.php:61
 msgid "New Q&A"
 msgstr ""
 
-#: qa-plugin.php:49
+#: qa-plugin.php:59
 msgid "Add new Q&A"
 msgstr ""
 
-#: qa-plugin.php:50 qa-plugin.php:166
+#: qa-plugin.php:60 qa-plugin.php:200 qa-plugin.php:256
 msgid "Edit Q&A"
 msgstr ""
 
-#: qa-plugin.php:52
+#: qa-plugin.php:62
 msgid "View Q&A"
 msgstr ""
 
-#: qa-plugin.php:53
+#: qa-plugin.php:63
 msgid "Search Q&A"
 msgstr ""
 
-#: qa-plugin.php:54
+#: qa-plugin.php:64
 msgid "No Q&A found"
 msgstr ""
 
-#: qa-plugin.php:55
+#: qa-plugin.php:65
 msgid "No Q&A found in Trash"
 msgstr ""
 
-#: qa-plugin.php:79 qa-plugin.php:89
+#: qa-plugin.php:98 qa-plugin.php:108
 msgid "Q&A Tags"
 msgstr ""
 
-#: qa-plugin.php:80
+#: qa-plugin.php:99
 msgid "Q&A Tag"
 msgstr ""
 
-#: qa-plugin.php:81
+#: qa-plugin.php:100
 msgid "Search Q&A Tags"
 msgstr ""
 
-#: qa-plugin.php:82
+#: qa-plugin.php:101
 msgid "All Q&A Tags"
 msgstr ""
 
-#: qa-plugin.php:83
+#: qa-plugin.php:102
 msgid "Parent Q&A Tag"
 msgstr ""
 
-#: qa-plugin.php:84
+#: qa-plugin.php:103
 msgid "Parent Q&A Tag:"
 msgstr ""
 
-#: qa-plugin.php:85
+#: qa-plugin.php:104
 msgid "Edit Q&A Tag"
 msgstr ""
 
-#: qa-plugin.php:86
+#: qa-plugin.php:105
 msgid "Update Q&A Tag"
 msgstr ""
 
-#: qa-plugin.php:87
+#: qa-plugin.php:106
 msgid "Add New Q&A Tag"
 msgstr ""
 
-#: qa-plugin.php:88
+#: qa-plugin.php:107
 msgid "New Q&A Tag Name"
 msgstr ""
 
-#: qa-plugin.php:108
+#: qa-plugin.php:124
 msgid "your question here"
 msgstr ""
 
-#: qa-plugin.php:151 qa-plugin.php:188
+#: qa-plugin.php:185 qa-plugin.php:241
 msgid "<b>Success!</b> Q&A is now ready for approval."
 msgstr ""
 
-#: qa-plugin.php:166
+#: qa-plugin.php:200 qa-plugin.php:256
 msgid "Delete Q&A"
 msgstr ""
 
-#: qa-plugin.php:167 qa-plugin.php:203
+#: qa-plugin.php:201 qa-plugin.php:257
 msgid "New Q&A Received"
 msgstr ""
 
-#: qa-plugin.php:171
+#: qa-plugin.php:205 qa-plugin.php:261
 msgid "Q&A: "
 msgstr ""
 
-#: qa-plugin.php:176
+#: qa-plugin.php:210
 msgid "<b>Error!</b> The Captcha was wrong."
 msgstr ""
 
-#: qa-plugin.php:211
+#: qa-plugin.php:266
 msgid "<b>Error!</b> You have to fill out the Captcha."
 msgstr ""
 
-#: qa-plugin.php:216
+#: qa-plugin.php:271
 msgid "<b>Error!</b> You have to fill out the Question."
 msgstr ""
 
-#: qa-plugin.php:222
+#: qa-plugin.php:277
 msgid "Question to ask"
 msgstr ""
 
-#: qa-plugin.php:238
+#: qa-plugin.php:278
+msgid "Type your question here"
+msgstr ""
+
+#: qa-plugin.php:293
 msgid "Submit"
 msgstr ""
 
-#: qa-plugin.php:256
+#: qa-plugin.php:317
 msgid "Name"
 msgstr ""
 
-#: qa-plugin.php:260 qa-plugin.php:369
+#: qa-plugin.php:321 qa-plugin.php:447
 msgid "Email"
 msgstr ""
 
-#: qa-plugin.php:262
+#: qa-plugin.php:323
 msgid ""
 "If you provide an Email you will receive a message, once your Question is "
 "Answered."
 msgstr ""
 
-#: qa-plugin.php:316
+#: qa-plugin.php:386
 msgid "Anonymous"
 msgstr ""
 
-#: qa-plugin.php:364
+#: qa-plugin.php:442
 msgid "Date"
 msgstr ""
 
-#: qa-plugin.php:366
+#: qa-plugin.php:444
 msgid "Answer"
 msgstr ""
 
-#: qa-plugin.php:367
+#: qa-plugin.php:445
 msgid "Username"
 msgstr ""
 
-#: qa-plugin.php:368
+#: qa-plugin.php:446
 msgid "ip"
 msgstr ""
 
-#: qa-plugin.php:412
+#: qa-plugin.php:502
 msgid "Name and Email"
 msgstr ""
 
-#: qa-plugin.php:421
+#: qa-plugin.php:517
 msgid "Username: "
 msgstr ""
 
-#: qa-plugin.php:422
+#: qa-plugin.php:518
 msgid "IP: "
 msgstr ""
 
-#: qa-plugin.php:423
+#: qa-plugin.php:519
 msgid "E-mail: "
 msgstr ""
 
-#: qa-plugin.php:459
+#: qa-plugin.php:554
 msgid "First"
 msgstr ""
 
-#: qa-plugin.php:465
+#: qa-plugin.php:555
+msgid "Previous"
+msgstr ""
+
+#: qa-plugin.php:561
+msgid "Next"
+msgstr ""
+
+#: qa-plugin.php:562
 msgid "Last"
 msgstr ""
 
-#: qa-plugin.php:472
-msgid "Q&A - Overview"
-msgstr ""
-
-#: qa-plugin.php:484
+#: qa-plugin.php:579
 msgid "published"
 msgstr ""
 
-#: qa-plugin.php:494
+#: qa-plugin.php:589
 msgid "open"
 msgstr ""
 
-#: qa-plugin.php:519
+#: qa-plugin.php:598
+msgid "Q&A - Overview"
+msgstr ""
+
+#: qa-plugin.php:636
 msgid "Q&A Settings"
 msgstr ""
 
-#: qa-plugin.php:530
+#: qa-plugin.php:647
 msgid "Setting for Q&A plugin"
 msgstr ""
 
-#: qa-plugin.php:531
+#: qa-plugin.php:648
 msgid "Configure your Q&A"
 msgstr ""
 
-#: qa-plugin.php:537
+#: qa-plugin.php:656
+msgid "General Options"
+msgstr ""
+
+#: qa-plugin.php:657
+msgid "Design Options"
+msgstr ""
+
+#: qa-plugin.php:666
+msgid "Number Q&A"
+msgstr ""
+
+#: qa-plugin.php:676
+msgid ""
+"Select the number Q&A you need ([qa], [qa2], [qa3], ...). Default: 1 [qa]"
+msgstr ""
+
+#: qa-plugin.php:680
 msgid "E-Mail Alert on new Q&A"
 msgstr ""
 
-#: qa-plugin.php:543
+#: qa-plugin.php:686
 msgid "Default e-mail"
 msgstr ""
 
-#: qa-plugin.php:546
+#: qa-plugin.php:689
 msgid ""
 "Enter the default e-mail. If not entered, it is sent to the administrator."
 msgstr ""
 
-#: qa-plugin.php:550
+#: qa-plugin.php:693
 msgid "Default answer"
 msgstr ""
 
-#: qa-plugin.php:553
+#: qa-plugin.php:696
 msgid ""
 "Enter the default answer. It shows if the question is published unanswered."
 msgstr ""
 
-#: qa-plugin.php:557
+#: qa-plugin.php:700
 msgid "User Fields"
 msgstr ""
 
-#: qa-plugin.php:559
+#: qa-plugin.php:702
 msgid ""
 "Would you like to display User Fields, like E-Mail and Username? This would "
 "give your users the possibility to receive a Notification if an Answer is "
 "answered."
 msgstr ""
 
-#: qa-plugin.php:563
+#: qa-plugin.php:706
+msgid "Email Notification"
+msgstr ""
+
+#: qa-plugin.php:708 qa-plugin.php:883
+msgid "Your Q&A has been Answered!"
+msgstr ""
+
+#: qa-plugin.php:710
+msgid ""
+"Enter the Notification. It send User if the question is published."
+"<br>Default: "
+msgstr ""
+
+#: qa-plugin.php:714
 msgid "Show Captcha"
 msgstr ""
 
-#: qa-plugin.php:569
+#: qa-plugin.php:720
 msgid "Captcha Private Key"
 msgstr ""
 
-#: qa-plugin.php:572 qa-plugin.php:579
+#: qa-plugin.php:723 qa-plugin.php:730
 msgid ""
 "Get a key from <a href=\"https://www.google.com/recaptcha/admin/create\" "
 "target=\"_blank\">https://www.google.com/recaptcha/admin/create</a>"
 msgstr ""
 
-#: qa-plugin.php:576
+#: qa-plugin.php:727
 msgid "Captcha Public Key"
 msgstr ""
 
-#: qa-plugin.php:583
+#: qa-plugin.php:737
 msgid "Number of Q&A"
 msgstr ""
 
-#: qa-plugin.php:586
+#: qa-plugin.php:740
 msgid "How much questions you want to display on one page."
 msgstr ""
 
-#: qa-plugin.php:590
+#: qa-plugin.php:744
 msgid "Color background open Q&A"
 msgstr ""
 
-#: qa-plugin.php:593
+#: qa-plugin.php:747
 msgid "Set color background open tab Q&A."
 msgstr ""
 
-#: qa-plugin.php:597
+#: qa-plugin.php:751
 msgid "Color background close Q&A"
 msgstr ""
 
-#: qa-plugin.php:600
+#: qa-plugin.php:754
 msgid "Set color background close tab Q&A."
 msgstr ""
 
-#: qa-plugin.php:604
+#: qa-plugin.php:758
 msgid "Font color for Q&A"
 msgstr ""
 
-#: qa-plugin.php:607
+#: qa-plugin.php:761
 msgid "Set font color for Q&A tab."
 msgstr ""
 
-#: qa-plugin.php:612
+#: qa-plugin.php:765
+msgid "Font family for Q&A"
+msgstr ""
+
+#: qa-plugin.php:768
+msgid ""
+"Set font family for Q&A tab. Default: Geneva, Arial, Helvetica, sans-serif"
+msgstr ""
+
+#: qa-plugin.php:772
+msgid "Font size for question Q&A"
+msgstr ""
+
+#: qa-plugin.php:775
+msgid "Set font size for Q&A tab. Default: 14px"
+msgstr ""
+
+#: qa-plugin.php:779
+msgid "Font size for answer Q&A"
+msgstr ""
+
+#: qa-plugin.php:782
+msgid "Set font size for Q&A tab. Default: 13px"
+msgstr ""
+
+#: qa-plugin.php:786
+msgid "Custom CSS for Q&A"
+msgstr ""
+
+#: qa-plugin.php:789
+msgid "Add custon CSS for Q&A."
+msgstr ""
+
+#: qa-plugin.php:794
 msgid "Show pagination"
 msgstr ""
 
-#: qa-plugin.php:615
+#: qa-plugin.php:797
 msgid "Top"
 msgstr ""
 
-#: qa-plugin.php:617
+#: qa-plugin.php:799
 msgid "Bottom"
 msgstr ""
 
-#: qa-plugin.php:619
+#: qa-plugin.php:801
 msgid "Both"
 msgstr ""
 
-#: qa-plugin.php:638
+#: qa-plugin.php:820
 msgid "Thanks for using Simple Q&A"
 msgstr ""
 
-#: qa-plugin.php:640
+#: qa-plugin.php:822
 msgid ""
 "Dear admin!<br />Thank you for using my plugin!<br />I hope it is useful for "
 "your site."
 msgstr ""
 
-#: qa-plugin.php:641
+#: qa-plugin.php:823
 msgid "Evgeniy Kutsenko"
 msgstr ""
 
-#: qa-plugin.php:643
+#: qa-plugin.php:825
 msgid "I like this plugin<br>– how can I thank you?"
 msgstr ""
 
-#: qa-plugin.php:644
+#: qa-plugin.php:826
 msgid "There are several ways for you to say thanks:"
 msgstr ""
 
-#: qa-plugin.php:646
+#: qa-plugin.php:828
 #, php-format
 msgid ""
 "<a href=\"%1$s\" target=\"_blank\">Buy me a cup of coffee</a> to stay awake "
 "and work on this plugin"
 msgstr ""
 
-#: qa-plugin.php:647
+#: qa-plugin.php:829
 #, php-format
 msgid ""
 "<a href=\"%1$s\" target=\"_blank\">Give 5 stars</a> over at the WordPress "
 "Plugin Directory"
 msgstr ""
 
-#: qa-plugin.php:648
+#: qa-plugin.php:830
 msgid "Share infotmation or make a nice blog post about the plugin"
 msgstr ""
 
-#: qa-plugin.php:651
+#: qa-plugin.php:833
 msgid "Support"
 msgstr ""
 
-#: qa-plugin.php:652
+#: qa-plugin.php:834
 #, php-format
 msgid ""
 "Please see the <a href=\"%1$s\" target=\"_blank\">support forum</a> or <a "
 "href=\"%2$s\" target=\"_blank\">plugin's site</a> for help."
 msgstr ""
 
-#: qa-plugin.php:654
+#: qa-plugin.php:836
 msgid "Good luck!"
 msgstr ""
 
-#: qa-plugin.php:685
+#: qa-plugin.php:885
 msgid " - Q&A - Answer Received"
-msgstr ""
-
-#: qa-plugin.php:685
-msgid "Your Q&A has been Answered!"
 msgstr ""
 
 #. Plugin Name of the plugin/theme

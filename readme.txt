@@ -3,8 +3,8 @@ Contributors: jon4god
 Donate link: http://starcoms.ru/
 Tags: Q&A, question and answer, question, questions, answer, answers
 Requires at least: 3.0
-Tested up to: 4.5
-Stable tag: 1.6
+Tested up to: 4.5.2
+Stable tag: 2.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -37,7 +37,6 @@ Place the [qa] shortcode in one of your posts.
 * Show answers by tags.
 * Last reply question widget.
 * The statistics widget.
-* Select the access level. (50%) <a href="https://github.com/jon4god/simple-qa/tree/role" target="_blank">See</a> Is it necessary?
 
 == Screenshots ==
 1. Q&A in Action
@@ -45,8 +44,15 @@ Place the [qa] shortcode in one of your posts.
 3. Q&A on Backend
 4. Edit question
 5. Setting plugin
+6. Setting design plugin
 
 == Changelog ==
+
+= 2.0 =
+* Add several shortcode
+* Add advanced design settings
+* Add editing response notification.
+* Fix some bugs
 
 = 1.6 =
 * Updated pagination
